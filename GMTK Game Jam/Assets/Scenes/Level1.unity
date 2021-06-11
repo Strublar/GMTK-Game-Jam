@@ -471,7 +471,7 @@ PrefabInstance:
     - target: {fileID: 5579328504623690949, guid: ca48c6aecf06ec74eab5ed02bca7c20a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.34386957
+      value: 1.957
       objectReference: {fileID: 0}
     - target: {fileID: 5579328504623690949, guid: ca48c6aecf06ec74eab5ed02bca7c20a,
         type: 3}
@@ -522,12 +522,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7280531360792500644}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7280531360792500646 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5579328504623690949, guid: ca48c6aecf06ec74eab5ed02bca7c20a,
-    type: 3}
-  m_PrefabInstance: {fileID: 7280531360792500644}
+--- !u!114 &7280531360792500646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7280531360792500645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378c36a10b32a0b4da397acf67d8eded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  attack: 0
+  AggroRange: 0
 --- !u!61 &7280531360792500647
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -574,23 +583,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!1818360609 &7280531360792500649
-RotationConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7280531360792500645}
-  m_Enabled: 1
-  m_Weight: 1
-  m_RotationAtRest: {x: 0, y: 0, z: 0}
-  m_RotationOffset: {x: 0, y: 0, z: 0}
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_IsContraintActive: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 7280531360792500646}
-    weight: 1
+  m_Constraints: 4

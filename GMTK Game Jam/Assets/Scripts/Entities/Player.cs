@@ -6,9 +6,9 @@ public class Player : Entity, IAttackable
 {
     public int Hp { get; set; }
 
-    public void OnAttacked()
+    public void OnAttacked(int damage)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("OUCH");
     }
 
 

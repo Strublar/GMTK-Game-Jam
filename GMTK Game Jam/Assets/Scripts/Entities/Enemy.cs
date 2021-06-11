@@ -8,8 +8,13 @@ public class Enemy : Entity, IAttackable
     public float AggroRange;
     public int Hp { get ; set; }
 
-    public void OnAttacked()
+    public void OnAttacked(int damage)
     {
         throw new System.NotImplementedException();
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        collision.gameObject.SendMessage("OnAttacked", this.attack);
     }
 }

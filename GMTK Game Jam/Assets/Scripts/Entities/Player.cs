@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Entity, IAttackable
 {
@@ -142,6 +143,8 @@ public class Player : Entity, IAttackable
         {
             float distance = (transform.position - soul.transform.position).magnitude;
             hp -= baseDmgPerSecond / 60f * Time.deltaTime * distance;
+            if (hp <= 0)
+                Die();
         }
 
         #endregion
@@ -187,6 +190,9 @@ public class Player : Entity, IAttackable
             {
                 Split();
             }
+
+            if (hp <= 0)
+                Die();
         }
     }
     public void StartCharging()
@@ -233,6 +239,10 @@ public class Player : Entity, IAttackable
         combineVFX.Play();
     }
 
+    public void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     public void PlaySound(GameObject sound)
     {
         AudioSource[] sources = sound.GetComponents<AudioSource>();

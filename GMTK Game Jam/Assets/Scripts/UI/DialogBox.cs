@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DialogBox : MonoBehaviour
 {
-    [SerializeField] GameObject textBox;
+    public GameObject textBox;
     [SerializeField] TextMeshProUGUI textMesh;
     int lettersPerSecond = 30;
 

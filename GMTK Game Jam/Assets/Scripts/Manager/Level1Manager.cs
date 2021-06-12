@@ -5,53 +5,83 @@ using UnityEngine;
 
 public class Level1Manager : MonoBehaviour
 {
-    [SerializeField] List<string> introText;
-    [SerializeField] GameObject textBox;
-    [SerializeField] TextMeshProUGUI textMesh;
-
-    int lettersPerSecond = 30;
-    int index;
+    int step;
+    [SerializeField] DialogBox dialogBox;
+    [SerializeField] Enemy sister;
+    [SerializeField] GameObject door;
 
     private void Start()
     {
-        index = 0;       
-        StartCoroutine(TypeDialog(introText[index]));
+        step = 0;       
+        StartCoroutine(Tuto1());
     }
 
-    public IEnumerator TypeDialog(string dialog, float delayInSec = 0f)
+    private IEnumerator Tuto1()
     {
-        yield return new WaitForSeconds(delayInSec);
-        
-        textBox.SetActive(true);
-        textMesh.text = "";
-        foreach (char letter in dialog.ToCharArray())
-        {
-            textMesh.text += letter;
-            yield return new WaitForSeconds(1f / lettersPerSecond);
-        }
+        string text = "You can move around with WASD.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return null;
+    }
 
-        yield return new WaitForSeconds(.5f);
+    private IEnumerator Tuto2()
+    {
+        yield return new WaitForSeconds(2f);
+        string text = "You can separate from your soul by pressing space.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+        step++;
+        yield return null;
+    }
+
+    private IEnumerator Tuto3()
+    {
+        yield return new WaitForSeconds(1f);
+        string text = "Your soul move in the opposite direction of your physical body.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(4f);
+        text = "When separated you lose energy depending from how far your soul is.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(4f);
+        text = "To regenerate energy simply reunite with your soul by keeping space pressed.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(4f);
+        text = "Last your soul bring peace of mind to people.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(4f);
+        text = "Try to appease your sister next room.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+    }
+
+    private IEnumerator EndTuto()
+    {
+        string text = "Good Job! Time to spread happyness.";
+        Destroy(door);
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(4f);
+        dialogBox.textBox.SetActive(false);
     }
 
     private void Update()
     {
-        if(index == 0)
+        if(step == 0)
         {
             if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) ||
                 Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
             {
-                index++;
-                StartCoroutine(TypeDialog(introText[index], 2));
+                step++;
+                StartCoroutine(Tuto2());
             }
         }
-        if(index == 1)
+        if(step == 2)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                index++;
-                StartCoroutine(TypeDialog(introText[index], 0));
+                step++;
+                StartCoroutine(Tuto3());
             }
         }
-        //to continue once we are setup on the gameplay
+        if(sister == null)
+        {
+            StartCoroutine(EndTuto());
+        }
     }
 }

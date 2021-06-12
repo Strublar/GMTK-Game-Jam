@@ -6,6 +6,7 @@ public class Player : Entity, IAttackable
 {
     public static Player p;
     public bool debug = false;
+    [SerializeField] private int maxHp;
     [SerializeField] private int hp;
 
     public int Hp { get => hp; set => hp = value; }
@@ -17,7 +18,7 @@ public class Player : Entity, IAttackable
     public float timerBeforeCombineAgain = 0f;
 
     [SerializeField] private float immunityFrame;
-    
+
     [SerializeField] private GameObject model;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject projectilePrefab, projectileContainer;
@@ -30,10 +31,12 @@ public class Player : Entity, IAttackable
     private float lastDamageFrame;
     private float currentChargeTime;
     private bool isCharging;
+    
 
     public float ImmunityFrame { get => immunityFrame; set => immunityFrame = value; }
     public float LastDamageFrame { get => lastDamageFrame; set => lastDamageFrame = value; }
     public bool IsCombined { get => isCombined; set => isCombined = value; }
+    public int MaxHp { get => maxHp; set => maxHp = value; }
 
     public void Awake()
     {
@@ -131,6 +134,11 @@ public class Player : Entity, IAttackable
         {
             Debug.Log("OUCH i got hit by " + args.attacker.name);
             lastDamageFrame = 0;
+
+            //Damags
+            hp -= args.damage;
+
+            //Force
             int forceStrength = 1500;
             Vector3 force = transform.position - args.attacker.transform.position;
             force.Normalize();
@@ -145,17 +153,17 @@ public class Player : Entity, IAttackable
 
     public void Fire(Vector3 direction)
     {
-        Debug.Log("Charge time = "+currentChargeTime);
+        Debug.Log("Charge time = " + currentChargeTime);
         if (currentChargeTime >= minChargeTime)
         {
             GameObject newProjectile = Instantiate(projectilePrefab, transform.position, transform.rotation, projectileContainer.transform);
 
-            float currentForce = minForce + (maxForce - minForce) 
-                * (currentChargeTime - minChargeTime) 
+            float currentForce = minForce + (maxForce - minForce)
+                * (currentChargeTime - minChargeTime)
                 / (maxChargeTime - minChargeTime);
             currentForce = Mathf.Min(maxForce, currentForce);
             newProjectile.GetComponent<Projectile>().Throw(direction, currentForce);
-            
+
         }
 
         isCharging = false;

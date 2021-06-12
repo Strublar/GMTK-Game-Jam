@@ -44,19 +44,19 @@ public class IntroManager : MonoBehaviour
 
     public void PickCharacterG()
     {
-        if (gameManager != null) gameManager.selectedCharacter = sprites[0];
+        if (gameManager != null) gameManager.selectedCharacter = 0;
         isCharacterPicked = true;
     }
 
     public void PickCharacterF()
     {
-        if (gameManager != null) gameManager.selectedCharacter = sprites[1];
+        if (gameManager != null) gameManager.selectedCharacter = 1;
         isCharacterPicked = true;
     }
 
     public void PickCharacterN()
     {
-        if (gameManager != null) gameManager.selectedCharacter = sprites[2];
+        if (gameManager != null) gameManager.selectedCharacter = 2;
         isCharacterPicked = true;
     }
 }

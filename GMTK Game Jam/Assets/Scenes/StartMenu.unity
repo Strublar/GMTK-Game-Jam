@@ -1458,7 +1458,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93872402540fe27439b010f33388bae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedCharacter: {fileID: 0}
+  firstCharacter:
+  - {fileID: 21300000, guid: 0a1802e1105d0874c9b4422bb587eb06, type: 3}
+  - {fileID: 21300000, guid: afc6de2c320bcf545be602142535144e, type: 3}
+  - {fileID: 21300000, guid: dfb664a4a4e01bd49ad031f6c101ac54, type: 3}
+  secondCharacter:
+  - {fileID: 21300000, guid: 9f2bc1ae8f53bd1429d52b5cb6b84409, type: 3}
+  - {fileID: 21300000, guid: b8d4c2bd46e254542a5d9551ed1e29be, type: 3}
+  - {fileID: 21300000, guid: 8e6ada2669a61cb469044a50b855f82a, type: 3}
+  thirdCharacter:
+  - {fileID: 21300000, guid: 655b98b88b067f6499dc138fb71daf24, type: 3}
+  - {fileID: 21300000, guid: eb59a764255e36741a19add2394ae7c7, type: 3}
+  - {fileID: 21300000, guid: ec6188c470ca373479adf73666a42264, type: 3}
+  selectedCharacter: 0
 --- !u!4 &1648459536
 Transform:
   m_ObjectHideFlags: 0

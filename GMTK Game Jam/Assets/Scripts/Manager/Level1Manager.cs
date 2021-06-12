@@ -8,7 +8,8 @@ public class Level1Manager : MonoBehaviour
     int step;
     [SerializeField] DialogBox dialogBox;
     [SerializeField] List<Enemy> enemies;
-    [SerializeField] GameObject door;
+    [SerializeField] GameObject doorClosed;
+    [SerializeField] GameObject doorOpen;
 
     private void Start()
     {
@@ -54,7 +55,8 @@ public class Level1Manager : MonoBehaviour
     private IEnumerator EndTuto()
     {
         string text = "Good Job! Time to spread happyness.";
-        Destroy(door);
+        Destroy(doorClosed);
+        doorOpen.SetActive(true);
         foreach(Enemy enemy in enemies)
         {
             enemy.AggroRange = 10f;

@@ -5,10 +5,21 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] private Player player;
+    [SerializeField] private GameObject unit;
     [SerializeField] private Image greenBar;
+    [SerializeField] private GameObject greenBarSprite;
     public void Update()
     {
-        greenBar.fillAmount = (float)player.Hp / (float)player.MaxHp;
+        IAttackable observedUnit = unit.GetComponent<IAttackable>();
+        if(greenBar != null)
+        {
+            greenBar.fillAmount = (float)observedUnit.Hp / (float)observedUnit.MaxHp;
+        }
+        else if (greenBarSprite !=null)
+        {
+            Debug.Log("wOLOLO" + (float)observedUnit.Hp / (float)observedUnit.MaxHp * .3f);
+            greenBarSprite.transform.localScale = new Vector3(
+                (float)observedUnit.Hp / (float)observedUnit.MaxHp * .3f, 0.5f, 1);
+        }
     }
 }

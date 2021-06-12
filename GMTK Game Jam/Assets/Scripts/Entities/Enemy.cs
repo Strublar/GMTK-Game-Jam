@@ -5,16 +5,27 @@ using UnityEngine;
 public class Enemy : Entity, IAttackable
 {
 
-    public float AggroRange;
-    public int Hp { get ; set; }
+    [SerializeField] private float aggroRange;
+    [SerializeField] private int hp;
 
-    public void OnAttacked(int damage)
+    [SerializeField] private float immunityFrame;
+    private float lastDamageFrame;
+
+    public int Hp { get => hp; set => hp = value; }
+    public float ImmunityFrame { get => immunityFrame; set => immunityFrame = value; }
+    public float AggroRange { get => aggroRange; set => aggroRange = value; }
+    public float LastDamageFrame { get => lastDamageFrame; set => lastDamageFrame = value; }
+
+    public void OnAttacked(OnAttackedArgs args)
     {
         throw new System.NotImplementedException();
     }
 
-    public void OnCollisionEnter(Collision collision)
-    {
-        collision.gameObject.SendMessage("OnAttacked", this.attack);
-    }
+
+    
+
+    
+
+
+
 }

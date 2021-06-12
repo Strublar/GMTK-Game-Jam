@@ -93,7 +93,7 @@ public class Level1Manager : MonoBehaviour
         if (AllEnemiesAreHappy() && step == 4)
         {
             step++;
-            EndLevel();
+            StartCoroutine(EndLevel());
         }
     }
 
@@ -106,10 +106,12 @@ public class Level1Manager : MonoBehaviour
         return true;
     }
 
-    private void EndLevel()
+    private IEnumerator EndLevel()
     {
         dialogBox.textBox.SetActive(true);
         string text = "Congratulations! Time to spread more happyness at your school.";
         StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(4f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level2");
     }
 }

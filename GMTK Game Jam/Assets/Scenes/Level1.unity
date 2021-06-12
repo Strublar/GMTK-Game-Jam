@@ -370,7 +370,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: aggroRange
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757724, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
@@ -490,6 +490,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f768fc1873b2a4498048d26f55df25c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &607016690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 500051146539362486}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378c36a10b32a0b4da397acf67d8eded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1011467374
@@ -1035,7 +1047,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: aggroRange
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757724, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
@@ -1066,6 +1078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2043885851}
   - component: {fileID: 2043885850}
+  - component: {fileID: 2043885852}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -1085,12 +1098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5208bb8c4a7cb746a3aa898001a6eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introText:
-  - You can move around with WASD.
-  - You can separate your soul by pressing Space.
-  - Your soul move in the opposite direction of yourself.
-  textBox: {fileID: 1011467374}
-  textMesh: {fileID: 2064158931}
+  dialogBox: {fileID: 2043885852}
+  sister: {fileID: 607016690}
+  door: {fileID: 1960556898476861302}
 --- !u!4 &2043885851
 Transform:
   m_ObjectHideFlags: 0
@@ -1105,6 +1115,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2043885852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043885849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d82c744449a02447a8acfbfe64bfee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 1011467374}
+  textMesh: {fileID: 2064158931}
 --- !u!1 &2064158929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,68 +1415,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallsLvl1
       objectReference: {fileID: 0}
-    - target: {fileID: 2886611340903970920, guid: 55f723dd42307904393692693c345d2a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2743568
-      objectReference: {fileID: 0}
-    - target: {fileID: 2886611340903970920, guid: 55f723dd42307904393692693c345d2a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10.43338
-      objectReference: {fileID: 0}
-    - target: {fileID: 2886611340903970920, guid: 55f723dd42307904393692693c345d2a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 2886611340903970920, guid: 55f723dd42307904393692693c345d2a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 2886611340973109220, guid: 55f723dd42307904393692693c345d2a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 22.501022
-      objectReference: {fileID: 0}
-    - target: {fileID: 2886611340973109220, guid: 55f723dd42307904393692693c345d2a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 4350797196076386001, guid: 55f723dd42307904393692693c345d2a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4350797196076386001, guid: 55f723dd42307904393692693c345d2a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4350797196137271645, guid: 55f723dd42307904393692693c345d2a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4350797196137271645, guid: 55f723dd42307904393692693c345d2a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4350797196137271645, guid: 55f723dd42307904393692693c345d2a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4350797196137271645, guid: 55f723dd42307904393692693c345d2a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55f723dd42307904393692693c345d2a, type: 3}
+--- !u!1 &1960556898476861302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2775396791138903135, guid: 55f723dd42307904393692693c345d2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1960556898476861301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4515581017246329156
 PrefabInstance:
   m_ObjectHideFlags: 0

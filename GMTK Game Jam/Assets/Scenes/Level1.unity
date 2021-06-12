@@ -849,6 +849,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643698789}
   m_CullTransparentMesh: 1
+--- !u!114 &1762415532 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7938406454789366642, guid: 047a609f6469d0e40ace590d3fff6440,
+    type: 3}
+  m_PrefabInstance: {fileID: 4515581017246329156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fc8a4aaf98114c9e50895330e1c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1773975029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,6 +1513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
         type: 3}
+      propertyPath: maxForce
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
+        type: 3}
       propertyPath: minForce
       value: 100
       objectReference: {fileID: 0}
@@ -1509,6 +1526,11 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
+        type: 3}
+      propertyPath: chargingBar
+      value: 
+      objectReference: {fileID: 1762415532}
     - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
         type: 3}
       propertyPath: healPerSecond

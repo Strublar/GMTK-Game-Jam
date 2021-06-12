@@ -34,7 +34,7 @@ public class Player : Entity, IAttackable
     [SerializeField] float healPerSecond;
     [SerializeField] float baseDmgPerSecond;
     [SerializeField] private AudioSource throwSound;
-
+    [SerializeField] private ChargingBar chargingBar;
 
     private float lastDamageFrame;
     private float currentChargeTime;
@@ -46,6 +46,7 @@ public class Player : Entity, IAttackable
     public float LastDamageFrame { get => lastDamageFrame; set => lastDamageFrame = value; }
     public bool IsCombined { get => isCombined; set => isCombined = value; }
     public int MaxHp { get => maxHp; set => maxHp = value; }
+    public bool IsCharging { get => isCharging; set => isCharging = value; }
 
     public void Awake()
     {
@@ -117,7 +118,10 @@ public class Player : Entity, IAttackable
 
         #region Charge Throw
 
-        currentChargeTime += isCharging ? Time.deltaTime : 0;
+        currentChargeTime += IsCharging ? Time.deltaTime : 0;
+
+        chargingBar.UpdateChargingBar(isCharging, currentChargeTime, minChargeTime, maxChargeTime);
+
         #endregion
 
         #region health change from soul
@@ -178,7 +182,7 @@ public class Player : Entity, IAttackable
     public void StartCharging()
     {
         currentChargeTime = 0;
-        isCharging = true;
+        IsCharging = true;
     }
 
     public void Fire(Vector3 direction)
@@ -196,7 +200,7 @@ public class Player : Entity, IAttackable
             throwSound.Play();
         }
 
-        isCharging = false;
+        IsCharging = false;
 
     }
 

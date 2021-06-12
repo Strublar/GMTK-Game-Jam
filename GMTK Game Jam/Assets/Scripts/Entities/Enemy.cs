@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : Entity, IAttackable
 {
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private float aggroRange;
     [SerializeField] private float hp;
@@ -12,6 +13,8 @@ public class Enemy : Entity, IAttackable
     [SerializeField] private float immunityFrame;
     [SerializeField] private Rigidbody2D rb;
     private float lastDamageFrame;
+
+    public bool IsHappy { get; set; }
     
 
     public float Hp { get => hp; set => hp = Mathf.Clamp(value, 0, maxHp); }
@@ -19,6 +22,12 @@ public class Enemy : Entity, IAttackable
     public float AggroRange { get => aggroRange; set => aggroRange = value; }
     public float LastDamageFrame { get => lastDamageFrame; set => lastDamageFrame = value; }
     public int MaxHp { get => maxHp; set => maxHp = value; }
+
+    private void Start()
+    {
+        spriteRenderer.color = Color.grey;
+        IsHappy = false;
+    }
 
     public void OnAttacked(OnAttackedArgs args)
     {
@@ -32,7 +41,15 @@ public class Enemy : Entity, IAttackable
         else //Soul damage
         {
             hp -= args.damage;
+            if (hp <= 0) BecomeHappy();
         }
+    }
+
+    private void BecomeHappy()
+    {
+        spriteRenderer.color = Color.white;
+        IsHappy = true;
+        moveSpeed = 0;
     }
 
 

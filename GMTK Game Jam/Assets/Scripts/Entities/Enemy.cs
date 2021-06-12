@@ -14,7 +14,7 @@ public class Enemy : Entity, IAttackable
     private float lastDamageFrame;
     
 
-    public float Hp { get => hp; set => hp = value; }
+    public float Hp { get => hp; set => hp = Mathf.Clamp(value, 0, maxHp); }
     public float ImmunityFrame { get => immunityFrame; set => immunityFrame = value; }
     public float AggroRange { get => aggroRange; set => aggroRange = value; }
     public float LastDamageFrame { get => lastDamageFrame; set => lastDamageFrame = value; }

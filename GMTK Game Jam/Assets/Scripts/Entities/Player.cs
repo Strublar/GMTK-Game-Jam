@@ -11,7 +11,6 @@ public class Player : Entity, IAttackable
     [SerializeField] float moveSpeedSplit;
     private float moveSpeedCombined;
 
-    public float Hp { get => hp; set => hp = value; }
     private bool isCombined = true;
     public Soul soul;
     private Collider2D soulCollider;
@@ -38,7 +37,8 @@ public class Player : Entity, IAttackable
     private float lastDamageFrame;
     private float currentChargeTime;
     private bool isCharging;
-    
+
+    public float Hp { get => hp; set => hp = Mathf.Clamp(value,0,maxHp); }
 
     public float ImmunityFrame { get => immunityFrame; set => immunityFrame = value; }
     public float LastDamageFrame { get => lastDamageFrame; set => lastDamageFrame = value; }
@@ -163,7 +163,7 @@ public class Player : Entity, IAttackable
             Debug.Log("OUCH i got hit by " + args.attacker.name);
             lastDamageFrame = 0;
 
-            //Damags
+            //Damages
             hp -= args.damage;
 
             //Force

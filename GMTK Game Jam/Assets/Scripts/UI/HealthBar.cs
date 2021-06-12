@@ -17,7 +17,6 @@ public class HealthBar : MonoBehaviour
         }
         else if (greenBarSprite !=null)
         {
-            Debug.Log("wOLOLO" + (float)observedUnit.Hp / (float)observedUnit.MaxHp * .3f);
             greenBarSprite.transform.localScale = new Vector3(
                 Mathf.Clamp01((float)observedUnit.Hp / (float)observedUnit.MaxHp) * .3f, 0.5f, 1);
         }

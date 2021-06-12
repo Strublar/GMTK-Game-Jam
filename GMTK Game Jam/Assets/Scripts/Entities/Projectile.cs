@@ -6,7 +6,9 @@ public class Projectile : Entity
 {
     [SerializeField] private float lifeTime;
     [SerializeField] List<Sprite> sprites;
-    [SerializeField] SpriteRenderer spriteRenderer; 
+    [SerializeField] SpriteRenderer spriteRenderer;
+
+    [SerializeField] private GameObject throwHitSounds;
 
     private bool hasImpact = false;
     private float currentLifeTime;
@@ -23,17 +25,13 @@ public class Projectile : Entity
         if(hasImpact) currentLifeTime += Time.deltaTime;
         if (currentLifeTime >= lifeTime)
             Destroy(this.gameObject);
-        //Move(direction, Time.deltaTime);
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        /*OnAttackedArgs args = new OnAttackedArgs();
-        args.attacker = gameObject;
-        args.damage = attack;
-        other.gameObject.SendMessage("OnAttacked", args);*/
 
-        //Destroy(this.gameObject);
         hasImpact = true;
+        Debug.Log("Hit with " + other.name);
+        PlaySound(throwHitSounds);
     }
 
     public void Throw(Vector3 direction, float currentForce)
@@ -41,5 +39,9 @@ public class Projectile : Entity
         this.GetComponent<Rigidbody2D>().AddForce(direction * currentForce);
     }
 
-    
+    public void PlaySound(GameObject sound)
+    {
+        AudioSource[] sources = sound.GetComponents<AudioSource>();
+        sources[Random.Range(0, sources.Length - 1)].Play();
+    }
 }

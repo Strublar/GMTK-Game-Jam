@@ -52,5 +52,5 @@ public class Enemy : Entity, IAttackable
         moveSpeed = 0;
     }
 
-
+    
 }

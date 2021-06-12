@@ -40,6 +40,11 @@ public class Player : Entity, IAttackable
     private float currentChargeTime;
     private bool isCharging;
 
+    #region Sounds containers
+    [SerializeField] private GameObject aspirationSounds,separationSounds,throwSounds;
+    #endregion
+
+
     public float Hp { get => hp; set => hp = Mathf.Clamp(value,0,maxHp); }
 
     public float ImmunityFrame { get => immunityFrame; set => immunityFrame = value; }
@@ -78,6 +83,7 @@ public class Player : Entity, IAttackable
                 soul.gameObject.SetActive(true);
                 moveSpeed = moveSpeedSplit;
                 timerBeforeCombineAgain = 1f;
+                PlaySound(separationSounds);
             }
 
             /*if (!IsCombined && timerBeforeCombineAgain <= 0 && isSoulInRange)
@@ -149,6 +155,7 @@ public class Player : Entity, IAttackable
             IsCombined = true;
             moveSpeed = moveSpeedCombined;
             soul.gameObject.SetActive(false);
+            PlaySound(aspirationSounds);
         }
 
     }
@@ -198,12 +205,18 @@ public class Player : Entity, IAttackable
                 / (maxChargeTime - minChargeTime);
             currentForce = Mathf.Min(maxForce, currentForce);
             newProjectile.GetComponent<Projectile>().Throw(direction, currentForce);
-            throwSound.Play();
+            PlaySound(throwSounds);
         }
 
         IsCharging = false;
 
     }
 
+
+    public void PlaySound(GameObject sound)
+    {
+        AudioSource[] sources = sound.GetComponents<AudioSource>();
+        sources[Random.Range(0, sources.Length - 1)].Play();
+    }
 
 }

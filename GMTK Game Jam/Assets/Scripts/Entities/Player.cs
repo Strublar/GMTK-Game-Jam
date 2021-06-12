@@ -43,7 +43,11 @@ public class Player : Entity, IAttackable
     #region Sounds containers
     [SerializeField] private GameObject aspirationSounds,separationSounds,throwSounds;
     #endregion
+    #region VFX
 
+    [SerializeField] private ParticleSystem combineVFX, splitVFX;
+
+    #endregion
 
     public float Hp { get => hp; set => hp = Mathf.Clamp(value,0,maxHp); }
 
@@ -217,6 +221,7 @@ public class Player : Entity, IAttackable
         moveSpeed = moveSpeedSplit;
         timerBeforeCombineAgain = 1f;
         PlaySound(separationSounds);
+        splitVFX.Play();
     }
 
     public void Combine()
@@ -225,6 +230,7 @@ public class Player : Entity, IAttackable
         moveSpeed = moveSpeedCombined;
         soul.gameObject.SetActive(false);
         PlaySound(aspirationSounds);
+        combineVFX.Play();
     }
 
     public void PlaySound(GameObject sound)

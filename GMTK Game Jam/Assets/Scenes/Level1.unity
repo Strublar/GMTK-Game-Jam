@@ -531,6 +531,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &555753756 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 555753756, guid: 047a609f6469d0e40ace590d3fff6440,
+    type: 3}
+  m_PrefabInstance: {fileID: 4515581017246329156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &560712920 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6444065356564095944, guid: e22e94c02a08b7749bd2629157674b20,
@@ -1137,11 +1143,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 555753756, guid: 047a609f6469d0e40ace590d3fff6440, type: 3}
+      propertyPath: lengthInSec
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 555753756, guid: 047a609f6469d0e40ace590d3fff6440, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0.7877617
+      objectReference: {fileID: 0}
+    - target: {fileID: 555753756, guid: 047a609f6469d0e40ace590d3fff6440, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 555753756, guid: 047a609f6469d0e40ace590d3fff6440, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
         type: 3}
       propertyPath: soul
       value: 
       objectReference: {fileID: 560712920}
+    - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
+        type: 3}
+      propertyPath: splitVFX
+      value: 
+      objectReference: {fileID: 555753756}
     - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
         type: 3}
       propertyPath: projectileContainer
@@ -1205,6 +1232,21 @@ PrefabInstance:
     - target: {fileID: 4515581016748863839, guid: 047a609f6469d0e40ace590d3fff6440,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663751712672789144, guid: 047a609f6469d0e40ace590d3fff6440,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0.8062601
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663751712672789144, guid: 047a609f6469d0e40ace590d3fff6440,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663751712672789144, guid: 047a609f6469d0e40ace590d3fff6440,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

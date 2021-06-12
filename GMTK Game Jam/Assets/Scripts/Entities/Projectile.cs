@@ -41,7 +41,7 @@ public class Projectile : Entity
 
         hasImpact = true;
         Debug.Log("Hit with " + other.name);
-        PlaySound(throwHitSounds);
+        //PlaySound(throwHitSounds);
     }
 
     public void Throw(Vector3 direction, float currentForce)

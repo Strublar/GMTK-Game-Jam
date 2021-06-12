@@ -20,6 +20,11 @@ public class Level1Manager : MonoBehaviour
     private IEnumerator Tuto1()
     {
         string text = "You can move around with WASD.";
+        if(GameManager.Instance.keyboard == GameManager.KeyboardLanguage.azerty)
+        {
+            text = "You can move around with ZQSD.";
+        }
+        
         StartCoroutine(dialogBox.TypeDialog(text));
         yield return null;
     }

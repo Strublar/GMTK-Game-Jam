@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 327160246}
+  - component: {fileID: 409432710636658166}
   m_Layer: 9
   m_Name: LinkHitBox
   m_TagString: Untagged
@@ -30,6 +31,19 @@ Transform:
   m_Father: {fileID: 232004744180618023}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &409432710636658166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327160245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed78b75f6faefcc47a712624a96184df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dps: 10
 --- !u!1 &2983732439710503548
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +225,7 @@ MonoBehaviour:
   attack: 0
   linkParticles: {fileID: 7897821784334985708}
   player: {fileID: 0}
-  link: {fileID: 0}
+  link: {fileID: 409432710636658166}
 --- !u!1 &7897821784334985708
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class Player : Entity, IAttackable
     public bool debug = false;
     [SerializeField] private int maxHp;
     [SerializeField] private int hp;
+    [SerializeField] float moveSpeedSplit;
+    private float moveSpeedCombined;
 
     public int Hp { get => hp; set => hp = value; }
     private bool isCombined = true;
@@ -16,6 +18,7 @@ public class Player : Entity, IAttackable
     private bool isSoulInRange = true;
     private SpriteRenderer spriteRenderer;
     public float timerBeforeCombineAgain = 0f;
+    
 
     [SerializeField] private float immunityFrame;
 
@@ -47,6 +50,7 @@ public class Player : Entity, IAttackable
     public void Start()
     {
         lastDamageFrame = immunityFrame;
+        moveSpeedCombined = moveSpeed;
 
     }
 
@@ -63,14 +67,16 @@ public class Player : Entity, IAttackable
             if (IsCombined && timerBeforeCombineAgain <= 0)
             {
                 IsCombined = false;
-                timerBeforeCombineAgain = 2f;
+                soul.gameObject.SetActive(true);
+                moveSpeed = moveSpeedSplit;
+                timerBeforeCombineAgain = 1f;
             }
 
-            if (!IsCombined && timerBeforeCombineAgain <= 0 && isSoulInRange)
+            /*if (!IsCombined && timerBeforeCombineAgain <= 0 && isSoulInRange)
             {
                 IsCombined = true;
                 timerBeforeCombineAgain = 2f;
-            }
+            }*/
         }
 
 
@@ -111,9 +117,12 @@ public class Player : Entity, IAttackable
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.name == "Soul")
+        if (col.name == "Soul" && timerBeforeCombineAgain <= 0)
         {
-            isSoulInRange = true;
+            //isSoulInRange = true;
+            IsCombined = true;
+            moveSpeed = moveSpeedCombined;
+            soul.gameObject.SetActive(false);
         }
 
     }

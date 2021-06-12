@@ -25,7 +25,13 @@ public class PlayerController : MonoBehaviour
         //Soul mouvement
         if (player.IsCombined == false)
         {
-            player.soul.Move(-direction, Time.deltaTime);
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Vector3 altDirection = player.transform.position - player.soul.transform.position;
+                altDirection.Normalize();
+                player.soul.Move(altDirection *2f, Time.deltaTime);
+            }
+            player.soul.Move(-direction, Time.deltaTime);                     
         }
         else
         {

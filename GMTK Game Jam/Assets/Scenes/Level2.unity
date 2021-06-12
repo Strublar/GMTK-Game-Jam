@@ -462,6 +462,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378c36a10b32a0b4da397acf67d8eded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &451910238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6289700033922881882, guid: e22e94c02a08b7749bd2629157674b20,
+    type: 3}
+  m_PrefabInstance: {fileID: 1826695538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &451910239
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451910238}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c3ddcb32c276264881ea54e92bcf878, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &474603212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1415,7 +1440,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1826695538}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 451910238}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f768fc1873b2a4498048d26f55df25c, type: 3}
@@ -2056,6 +2081,7 @@ MonoBehaviour:
   moveSpeed: 2.5
   attack: 20
   spriteRenderer: {fileID: 1688792246269328384}
+  happyVFX: {fileID: 0}
   aggroRange: 20
   hp: 70
   maxHp: 70
@@ -2096,6 +2122,7 @@ MonoBehaviour:
   moveSpeed: 2.5
   attack: 20
   spriteRenderer: {fileID: 1688792246269328384}
+  happyVFX: {fileID: 0}
   aggroRange: 20
   hp: 70
   maxHp: 70

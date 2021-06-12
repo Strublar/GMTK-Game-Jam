@@ -63,7 +63,7 @@ public class Player : Entity, IAttackable
         p = this;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         soulCollider = soul.GetComponent<Collider2D>();
-        if (GameManager.Instance != null) spriteRenderer.sprite = GameManager.Instance.selectedCharacter;
+        if (GameManager.Instance != null) spriteRenderer.sprite = GameManager.Instance.GetSprite();
     }
     public void Start()
     {

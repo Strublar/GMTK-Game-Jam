@@ -322,6 +322,7 @@ MonoBehaviour:
   offsetX: 0
   offsetY: 0
   player: {fileID: 4515581017246329157}
+  soul: {fileID: 560712920}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

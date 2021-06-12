@@ -5,14 +5,17 @@ using UnityEngine;
 public class Player : Entity, IAttackable
 {
     public static Player p;
-    public int Hp { get; set; }
     public bool debug = false;
-    public bool isCombined = true;
+    [SerializeField] private int hp;
+
+    public int Hp { get => hp; set => hp = value; }
+    private bool isCombined = true;
     public Soul soul;
-    public Collider2D soulCollider;
+    private Collider2D soulCollider;
     private bool isSoulInRange = true;
-    public SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
     public float timerBeforeCombineAgain = 0f;
+
     [SerializeField] private float immunityFrame;
     private float lastDamageFrame;
     [SerializeField] private GameObject model;
@@ -20,7 +23,19 @@ public class Player : Entity, IAttackable
 
     public float ImmunityFrame { get => immunityFrame; set => immunityFrame = value; }
     public float LastDamageFrame { get => lastDamageFrame; set => lastDamageFrame = value; }
+    public bool IsCombined { get => isCombined; set => isCombined = value; }
 
+    public void Awake()
+    {
+        p = this;
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        soulCollider = soul.GetComponent<Collider2D>();
+    }
+    public void Start()
+    {
+        lastDamageFrame = immunityFrame;
+
+    }
 
     void Update()
     {
@@ -30,28 +45,28 @@ public class Player : Entity, IAttackable
             timerBeforeCombineAgain -= Time.deltaTime;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isCombined && timerBeforeCombineAgain <= 0)
+            if (IsCombined && timerBeforeCombineAgain <= 0)
             {
-                isCombined = false;
+                IsCombined = false;
                 timerBeforeCombineAgain = 2f;
             }
 
-            if (!isCombined && timerBeforeCombineAgain <= 0)
+            if (!IsCombined && timerBeforeCombineAgain <= 0)
             {
-                isCombined = true;
+                IsCombined = true;
                 timerBeforeCombineAgain = 2f;
             }
         }
 
 
-        if(isSoulInRange == false && debug == true)
+        if (isSoulInRange == false && debug == true)
         {
             spriteRenderer.color = Color.green;
         }
 
-        if(isSoulInRange == true && debug == true)
+        if (isSoulInRange == true && debug == true)
         {
             spriteRenderer.color = Color.white;
         }
@@ -85,34 +100,26 @@ public class Player : Entity, IAttackable
 
     }
 
-    void OnTriggerExit2D(Collider2D col) 
+    void OnTriggerExit2D(Collider2D col)
     {
         if (col.name == "Soul")
         {
             isSoulInRange = false;
         }
     }
-    
 
-    public void Awake()
-    {
-        p = this;
-    }
-    public void Start()
-    {
-        lastDamageFrame = immunityFrame;
-        
-    }
+
+
     public void OnAttacked(OnAttackedArgs args)
     {
-        if(lastDamageFrame>immunityFrame)
+        if (lastDamageFrame > immunityFrame)
         {
-            Debug.Log("OUCH i got hit by "+args.attacker.name);
+            Debug.Log("OUCH i got hit by " + args.attacker.name);
             lastDamageFrame = 0;
             int forceStrength = 1500;
             Vector3 force = transform.position - args.attacker.transform.position;
             force.Normalize();
-            rb.AddForce(forceStrength*force);
+            rb.AddForce(forceStrength * force);
         }
     }
 

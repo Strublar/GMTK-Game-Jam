@@ -9,6 +9,7 @@ public class Enemy : Entity, IAttackable
     [SerializeField] private int hp;
 
     [SerializeField] private float immunityFrame;
+    [SerializeField] private Rigidbody2D rb;
     private float lastDamageFrame;
 
     public int Hp { get => hp; set => hp = value; }
@@ -18,14 +19,18 @@ public class Enemy : Entity, IAttackable
 
     public void OnAttacked(OnAttackedArgs args)
     {
-        throw new System.NotImplementedException();
+        if(args.damage == 0) //Knockback
+        {
+            /*int forceStrength = 500;
+            Vector3 force = transform.position - args.attacker.transform.position;
+            force.Normalize();
+            rb.AddForce(forceStrength * force);*/
+        }
+        else //Soul damage
+        {
+
+        }
     }
-
-
-    
-
-    
-
 
 
 }

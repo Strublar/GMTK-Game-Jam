@@ -123,14 +123,18 @@ MonoBehaviour:
   moveSpeed: 1
   attack: 0
   debug: 0
-  isCombined: 1
+  hp: 0
   soul: {fileID: 0}
-  soulCollider: {fileID: 0}
-  spriteRenderer: {fileID: 0}
   timerBeforeCombineAgain: 0
   immunityFrame: 0
   model: {fileID: 4515581017540392175}
   rb: {fileID: 199031495}
+  projectilePrefab: {fileID: 0}
+  projectileContainer: {fileID: 0}
+  minChargeTime: 1
+  maxChargeTime: 3
+  minForce: 10
+  maxForce: 100
 --- !u!114 &4481185134972734455
 MonoBehaviour:
   m_ObjectHideFlags: 0

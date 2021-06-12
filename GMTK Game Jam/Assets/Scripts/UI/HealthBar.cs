@@ -13,13 +13,13 @@ public class HealthBar : MonoBehaviour
         IAttackable observedUnit = unit.GetComponent<IAttackable>();
         if(greenBar != null)
         {
-            greenBar.fillAmount = (float)observedUnit.Hp / (float)observedUnit.MaxHp;
+            greenBar.fillAmount = Mathf.Clamp01((float)observedUnit.Hp / (float)observedUnit.MaxHp);
         }
         else if (greenBarSprite !=null)
         {
             Debug.Log("wOLOLO" + (float)observedUnit.Hp / (float)observedUnit.MaxHp * .3f);
             greenBarSprite.transform.localScale = new Vector3(
-                (float)observedUnit.Hp / (float)observedUnit.MaxHp * .3f, 0.5f, 1);
+                Mathf.Clamp01((float)observedUnit.Hp / (float)observedUnit.MaxHp) * .3f, 0.5f, 1);
         }
     }
 }

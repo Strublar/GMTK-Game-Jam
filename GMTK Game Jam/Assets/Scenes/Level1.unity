@@ -769,12 +769,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 500051146539362486}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &1984459573 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 7203839023773757726, guid: ad7a0604237850d4599a5ff7af902f8a,
-    type: 3}
-  m_PrefabInstance: {fileID: 500051146539362486}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2038801303 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4515581016748863838, guid: 047a609f6469d0e40ace590d3fff6440,
@@ -876,12 +870,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137864553}
     m_Modifications:
-    - target: {fileID: 1688792246162968523, guid: ad7a0604237850d4599a5ff7af902f8a,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 594ef0f7cfe1b104c96e786b860315fa,
-        type: 3}
     - target: {fileID: 2499698834948901918, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: m_Name
@@ -942,11 +930,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
+    - target: {fileID: 7151576538959465776, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 1984459573}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151576538959465776, guid: ad7a0604237850d4599a5ff7af902f8a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151576538959465776, guid: ad7a0604237850d4599a5ff7af902f8a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad7a0604237850d4599a5ff7af902f8a, type: 3}
 --- !u!1001 &698916356907844702

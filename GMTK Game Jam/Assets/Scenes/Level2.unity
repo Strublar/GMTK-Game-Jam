@@ -278,7 +278,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: moveSpeed
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
@@ -403,7 +403,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: moveSpeed
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
@@ -516,7 +516,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: moveSpeed
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
@@ -550,6 +550,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1612718319}
     m_Modifications:
+    - target: {fileID: 2703744821785725793, guid: 5161e02c635e2564e9bf829334ba76af,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2703744821785725793, guid: 5161e02c635e2564e9bf829334ba76af,
         type: 3}
       propertyPath: aggroRange
@@ -802,7 +807,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: moveSpeed
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
@@ -848,6 +853,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1612718319}
     m_Modifications:
+    - target: {fileID: 2703744821785725793, guid: 5161e02c635e2564e9bf829334ba76af,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2703744821785725793, guid: 5161e02c635e2564e9bf829334ba76af,
         type: 3}
       propertyPath: aggroRange
@@ -1031,7 +1041,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: moveSpeed
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
@@ -1174,7 +1184,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: moveSpeed
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
@@ -1388,7 +1398,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: moveSpeed
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
@@ -1687,6 +1697,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2112307293}
+    - target: {fileID: 6444065356564095944, guid: e22e94c02a08b7749bd2629157674b20,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e22e94c02a08b7749bd2629157674b20, type: 3}
 --- !u!114 &1826695539 stripped
@@ -1761,9 +1776,19 @@ PrefabInstance:
       objectReference: {fileID: 2057911006}
     - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
         type: 3}
+      propertyPath: moveSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
+        type: 3}
       propertyPath: chargingBar
       value: 
       objectReference: {fileID: 2112307294}
+    - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
+        type: 3}
+      propertyPath: moveSpeedSplit
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
         type: 3}
       propertyPath: projectileContainer
@@ -1941,7 +1966,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: moveSpeed
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
@@ -1975,6 +2000,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1612718319}
     m_Modifications:
+    - target: {fileID: 2703744821785725793, guid: 5161e02c635e2564e9bf829334ba76af,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2703744821785725793, guid: 5161e02c635e2564e9bf829334ba76af,
         type: 3}
       propertyPath: aggroRange

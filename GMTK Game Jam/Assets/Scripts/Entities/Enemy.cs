@@ -14,7 +14,8 @@ public class Enemy : Entity, IAttackable
     [SerializeField] private float immunityFrame;
     [SerializeField] private Rigidbody2D rb;
     private float lastDamageFrame;
-
+    [SerializeField]protected float wanderTimer;
+    protected float baseWanderTimer;
     public bool IsHappy { get; set; }
     
 
@@ -28,6 +29,24 @@ public class Enemy : Entity, IAttackable
     {
         spriteRenderer.color = Color.grey;
         IsHappy = false;
+        baseWanderTimer = wanderTimer;
+    }
+
+    public virtual void Update()
+    {
+        Vector3 direction = Player.p.transform.position - transform.position;
+        if (direction.magnitude <= AggroRange)
+        {
+            direction.Normalize();
+            Move(direction, Time.deltaTime);
+        }
+
+        wanderTimer -= Time.deltaTime;
+        if (IsHappy && wanderTimer <= 0f)
+        {
+            wanderTimer = baseWanderTimer;
+            Wander();
+        }
     }
 
     public void OnAttacked(OnAttackedArgs args)
@@ -56,8 +75,17 @@ public class Enemy : Entity, IAttackable
 
             moveSpeed = 0;
             happyVFX.Play();
+            Player.p.Hp += 5;
         }
         
+    }
+
+    protected void Wander()
+    {
+        int forceStrength = Random.Range(10, 50);
+        Vector3 direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
+        direction.Normalize();
+        rb.AddForce(forceStrength * direction);
     }
 
     

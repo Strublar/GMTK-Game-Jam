@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218ee7a45f949de4697f9afccccc185e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogBox: {fileID: 0}
+  dialogBox: {fileID: 474603214}
   enemies:
   - {fileID: 544828041}
   - {fileID: 67597163}

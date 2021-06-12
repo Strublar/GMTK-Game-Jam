@@ -47,12 +47,12 @@ public class Level2Manager : MonoBehaviour
 
     private void Update()
     {
-        if (door.IsOpen && step == 0)
+        /*if (door.IsOpen && step == 0)
         {
             step++;
             StopAllCoroutines();
             StartCoroutine(EndTuto());
-        }
+        }*/
         if (AllEnemiesAreHappy() && step == 1)
         {
             step++;

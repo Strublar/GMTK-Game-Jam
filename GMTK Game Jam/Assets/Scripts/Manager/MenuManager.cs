@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     public void OnPlayClicked()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Intro");
     }
 
     public void OnSettingClicked()

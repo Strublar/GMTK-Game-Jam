@@ -93,7 +93,7 @@ public class Level1Manager : MonoBehaviour
         if (AllEnemiesAreHappy() && step == 4)
         {
             step++;
-            //EndLevel();
+            EndLevel();
         }
     }
 
@@ -104,5 +104,12 @@ public class Level1Manager : MonoBehaviour
             if (!enemy.IsHappy) return false;
         }
         return true;
+    }
+
+    private void EndLevel()
+    {
+        dialogBox.textBox.SetActive(true);
+        string text = "Congratulations! Time to spread more happyness at your school.";
+        StartCoroutine(dialogBox.TypeDialog(text));
     }
 }

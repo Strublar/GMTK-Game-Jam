@@ -7,7 +7,7 @@ public class Level1Manager : MonoBehaviour
 {
     int step;
     [SerializeField] DialogBox dialogBox;
-    [SerializeField] Enemy sister;
+    [SerializeField] List<Enemy> enemies;
     [SerializeField] GameObject door;
 
     private void Start()
@@ -55,6 +55,10 @@ public class Level1Manager : MonoBehaviour
     {
         string text = "Good Job! Time to spread happyness.";
         Destroy(door);
+        foreach(Enemy enemy in enemies)
+        {
+            enemy.AggroRange = 10f;
+        }
         StartCoroutine(dialogBox.TypeDialog(text));
         yield return new WaitForSeconds(4f);
         dialogBox.textBox.SetActive(false);
@@ -79,9 +83,25 @@ public class Level1Manager : MonoBehaviour
                 StartCoroutine(Tuto3());
             }
         }
-        if(sister == null)
+        if(enemies[0].IsHappy && step == 3)
         {
+            step++;
+            StopAllCoroutines();
             StartCoroutine(EndTuto());
         }
+        if (AllEnemiesAreHappy() && step == 4)
+        {
+            step++;
+            //EndLevel();
+        }
+    }
+
+    private bool AllEnemiesAreHappy()
+    {
+        foreach(Enemy enemy in enemies)
+        {
+            if (!enemy.IsHappy) return false;
+        }
+        return true;
     }
 }

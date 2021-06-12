@@ -19,6 +19,7 @@ public struct OnAttackedArgs
 {
     public GameObject attacker;
     public float damage;
+    public bool splitSoul;
 }
 
 

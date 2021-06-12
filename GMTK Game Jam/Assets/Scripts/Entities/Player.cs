@@ -79,11 +79,7 @@ public class Player : Entity, IAttackable
         {
             if (IsCombined && timerBeforeCombineAgain <= 0)
             {
-                IsCombined = false;
-                soul.gameObject.SetActive(true);
-                moveSpeed = moveSpeedSplit;
-                timerBeforeCombineAgain = 1f;
-                PlaySound(separationSounds);
+                Split();
             }
 
             /*if (!IsCombined && timerBeforeCombineAgain <= 0 && isSoulInRange)
@@ -152,10 +148,7 @@ public class Player : Entity, IAttackable
         if (col.name == "Soul" && timerBeforeCombineAgain <= 0)
         {
             //isSoulInRange = true;
-            IsCombined = true;
-            moveSpeed = moveSpeedCombined;
-            soul.gameObject.SetActive(false);
-            PlaySound(aspirationSounds);
+            Combine();
         }
 
     }
@@ -185,6 +178,11 @@ public class Player : Entity, IAttackable
             Vector3 force = transform.position - args.attacker.transform.position;
             force.Normalize();
             rb.AddForce(forceStrength * force);
+
+            if(args.splitSoul)
+            {
+                Split();
+            }
         }
     }
     public void StartCharging()
@@ -212,6 +210,22 @@ public class Player : Entity, IAttackable
 
     }
 
+    public void Split()
+    {
+        IsCombined = false;
+        soul.gameObject.SetActive(true);
+        moveSpeed = moveSpeedSplit;
+        timerBeforeCombineAgain = 1f;
+        PlaySound(separationSounds);
+    }
+
+    public void Combine()
+    {
+        IsCombined = true;
+        moveSpeed = moveSpeedCombined;
+        soul.gameObject.SetActive(false);
+        PlaySound(aspirationSounds);
+    }
 
     public void PlaySound(GameObject sound)
     {

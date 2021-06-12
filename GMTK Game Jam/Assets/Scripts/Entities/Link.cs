@@ -22,6 +22,7 @@ public class Link : MonoBehaviour
         OnAttackedArgs args;
         args.attacker = this.gameObject;
         args.damage = dps * Time.deltaTime;
+        args.splitSoul = false;
         foreach (RaycastHit2D hit in hits)
         {
             if(hit.transform.gameObject.layer == 7)

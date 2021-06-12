@@ -39,11 +39,6 @@ public class PlayerController : MonoBehaviour
         }
         #endregion
 
-        
-
-
-
-
     }
 
     private void Update()
@@ -67,6 +62,16 @@ public class PlayerController : MonoBehaviour
             player.Fire(fireDirection);
         }
 
+        #endregion
+
+
+        #region Swap with soul
+        if (Input.GetMouseButtonUp(1))
+        {
+            Vector3 tmpPos = player.transform.position;
+            player.transform.position = player.soul.transform.position;
+            player.soul.transform.position = tmpPos;
+        }
         #endregion
     }
 }

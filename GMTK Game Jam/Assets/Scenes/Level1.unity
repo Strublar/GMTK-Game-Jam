@@ -292,6 +292,7 @@ MonoBehaviour:
   offsetX: 0
   offsetY: 0
   player: {fileID: 4515581017246329157}
+  soul: {fileID: 560712920}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -836,7 +837,6 @@ PrefabInstance:
       value: -6.387706
       objectReference: {fileID: 0}
     - target: {fileID: 1960556900017179385, guid: 55f723dd42307904393692693c345d2a,
-
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1

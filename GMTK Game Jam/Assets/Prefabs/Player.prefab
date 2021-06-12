@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 4481185134972734455}
   - component: {fileID: 199031495}
   - component: {fileID: 199031496}
+  - component: {fileID: 6091786411850198409}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -121,7 +122,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   attack: 0
-  hp: 0
+  debug: 0
+  isCombined: 1
+  soul: {fileID: 0}
+  soulCollider: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  timerBeforeCombineAgain: 0
   immunityFrame: 0
   model: {fileID: 4515581017540392175}
   rb: {fileID: 199031495}
@@ -185,6 +191,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.38, y: 5.45}
   m_EdgeRadius: 0
+--- !u!58 &6091786411850198409
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515581016748863838}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.21
 --- !u!1 &4515581017540392175
 GameObject:
   m_ObjectHideFlags: 0

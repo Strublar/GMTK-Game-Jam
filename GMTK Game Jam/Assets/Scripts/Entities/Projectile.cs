@@ -5,7 +5,8 @@ using UnityEngine;
 public class Projectile : Entity
 {
     [SerializeField] private float lifeTime;
-    [SerializeField] List<Sprite> sprites;
+    [SerializeField] List<Sprite> spritesGrey;
+    [SerializeField] List<Sprite> spritesColor;
     [SerializeField] SpriteRenderer spriteRenderer;
 
     [SerializeField] private GameObject throwHitSounds;
@@ -16,8 +17,17 @@ public class Projectile : Entity
 
     private void Start()
     {
-        int index = Random.Range(0, sprites.Count);
-        spriteRenderer.sprite = sprites[index];
+        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Level2")
+        {
+            int index = Random.Range(0, spritesGrey.Count);
+            spriteRenderer.sprite = spritesGrey[index];
+        }
+        else
+        {
+            int index = Random.Range(0, spritesColor.Count);
+            spriteRenderer.sprite = spritesColor[index];
+        }
+        
     }
 
     public void Update()

@@ -54,7 +54,7 @@ public class Player : Entity, IAttackable
                 timerBeforeCombineAgain = 2f;
             }
 
-            if (!IsCombined && timerBeforeCombineAgain <= 0)
+            if (!IsCombined && timerBeforeCombineAgain <= 0 && isSoulInRange)
             {
                 IsCombined = true;
                 timerBeforeCombineAgain = 2f;

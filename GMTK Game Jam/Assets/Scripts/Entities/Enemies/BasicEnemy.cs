@@ -11,7 +11,7 @@ public class BasicEnemy : Enemy
         args.damage = attack;
 
         if (other.gameObject.GetComponent<MonoBehaviour>() != null)
-            other.gameObject.SendMessage("OnAttacked", args);
+            other.gameObject.SendMessage("OnAttacked", args,SendMessageOptions.DontRequireReceiver);
 
 
     }

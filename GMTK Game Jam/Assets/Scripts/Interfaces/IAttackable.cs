@@ -18,7 +18,7 @@ public interface IAttackable
 public struct OnAttackedArgs
 {
     public GameObject attacker;
-    public int damage;
+    public float damage;
 }
 
 

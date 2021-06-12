@@ -31,7 +31,7 @@ public class Enemy : Entity, IAttackable
         }
         else //Soul damage
         {
-
+            hp -= args.damage;
         }
     }
 

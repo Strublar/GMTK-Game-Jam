@@ -33,6 +33,8 @@ public class Player : Entity, IAttackable
     //variable related to the heal and damage from the soul
     [SerializeField] float healPerSecond;
     [SerializeField] float baseDmgPerSecond;
+    [SerializeField] private AudioSource throwSound;
+
 
     private float lastDamageFrame;
     private float currentChargeTime;
@@ -191,7 +193,7 @@ public class Player : Entity, IAttackable
                 / (maxChargeTime - minChargeTime);
             currentForce = Mathf.Min(maxForce, currentForce);
             newProjectile.GetComponent<Projectile>().Throw(direction, currentForce);
-
+            throwSound.Play();
         }
 
         isCharging = false;

@@ -64,9 +64,9 @@ public class Player : Entity, IAttackable
         }
     }
 
-    public void OnAttacked()
+    public void OnAttacked(int damage)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("OUCH");
     }
 
 }

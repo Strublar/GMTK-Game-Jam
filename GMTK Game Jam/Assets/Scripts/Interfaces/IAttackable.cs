@@ -6,5 +6,5 @@ public interface IAttackable
 {
     int Hp { get; set; }
 
-    void OnAttacked();
+    void OnAttacked(int damage);
 }

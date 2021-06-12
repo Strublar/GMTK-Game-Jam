@@ -11,6 +11,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<Sprite> thirdCharacter;
     [HideInInspector] public int selectedCharacter;
 
+    public enum KeyboardLanguage : int
+    {
+        qwerty = 0,
+        azerty = 1
+    }
+    public KeyboardLanguage keyboard;
+
     private void Awake()
     {
         Instance = this;

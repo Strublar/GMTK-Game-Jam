@@ -40,6 +40,7 @@ public class Player : Entity, IAttackable
     private float lastDamageFrame;
     private float currentChargeTime;
     private bool isCharging;
+    [SerializeField] public int Level;
 
     #region Sounds containers
     [SerializeField] private GameObject aspirationSounds,separationSounds,throwSounds;
@@ -126,9 +127,13 @@ public class Player : Entity, IAttackable
 
         #region Charge Throw
 
-        currentChargeTime += IsCharging ? Time.deltaTime : 0;
+        if(Level>=2)
+        {
+            currentChargeTime += IsCharging ? Time.deltaTime : 0;
 
-        chargingBar.UpdateChargingBar(isCharging, currentChargeTime, minChargeTime, maxChargeTime);
+            chargingBar.UpdateChargingBar(isCharging, currentChargeTime, minChargeTime, maxChargeTime);
+        }
+        
 
         #endregion
 

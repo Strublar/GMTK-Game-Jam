@@ -12,11 +12,21 @@ public class PlayerController : MonoBehaviour
     {
         #region Movement
         Vector3 direction = Vector2.zero;
-
-        direction += Input.GetKey(KeyCode.W) ? Vector3.up : Vector3.zero;
-        direction += Input.GetKey(KeyCode.S) ? Vector3.down : Vector3.zero;
-        direction += Input.GetKey(KeyCode.A) ? Vector3.left : Vector3.zero;
-        direction += Input.GetKey(KeyCode.D) ? Vector3.right : Vector3.zero;
+        if(GameManager.Instance.keyboard == GameManager.KeyboardLanguage.qwerty)
+        {
+            direction += Input.GetKey(KeyCode.W) ? Vector3.up : Vector3.zero;
+            direction += Input.GetKey(KeyCode.S) ? Vector3.down : Vector3.zero;
+            direction += Input.GetKey(KeyCode.A) ? Vector3.left : Vector3.zero;
+            direction += Input.GetKey(KeyCode.D) ? Vector3.right : Vector3.zero;
+        }
+        else
+        {
+            direction += Input.GetKey(KeyCode.Z) ? Vector3.up : Vector3.zero;
+            direction += Input.GetKey(KeyCode.S) ? Vector3.down : Vector3.zero;
+            direction += Input.GetKey(KeyCode.Q) ? Vector3.left : Vector3.zero;
+            direction += Input.GetKey(KeyCode.D) ? Vector3.right : Vector3.zero;
+        }
+        
 
         direction.Normalize();
 
@@ -46,12 +56,12 @@ public class PlayerController : MonoBehaviour
         #region Projectiles
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && player.Level>=2)
         {
             player.StartCharging();
             Debug.Log("Start charging");
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && player.Level >= 2)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos = new Vector3(mousePos.x, mousePos.y, 0);
@@ -66,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
 
         #region Swap with soul
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1) && player.Level >= 3)
         {
             Vector3 tmpPos = player.transform.position;
             player.transform.position = player.soul.transform.position;

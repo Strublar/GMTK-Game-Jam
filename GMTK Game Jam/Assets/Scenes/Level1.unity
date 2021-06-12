@@ -5106,6 +5106,11 @@ PrefabInstance:
       objectReference: {fileID: 1127488259}
     - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
         type: 3}
+      propertyPath: Level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
+        type: 3}
       propertyPath: splitVFX
       value: 
       objectReference: {fileID: 852882648}

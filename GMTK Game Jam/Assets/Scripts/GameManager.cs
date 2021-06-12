@@ -16,11 +16,18 @@ public class GameManager : MonoBehaviour
         qwerty = 0,
         azerty = 1
     }
-    public KeyboardLanguage keyboard;
+    public KeyboardLanguage keyboard = KeyboardLanguage.qwerty;
 
     private void Awake()
     {
-        Instance = this;
+        
+    }
+
+    private void OnEnable()
+    {
+        if (Instance == null)
+            Instance = this;
+        else Destroy(this.gameObject);
     }
 
     private void Start()

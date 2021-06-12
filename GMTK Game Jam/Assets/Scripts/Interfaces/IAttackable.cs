@@ -7,7 +7,7 @@ public interface IAttackable
 
     float LastDamageFrame { get; set; }
     float ImmunityFrame { get; set; }
-    int Hp { get; set; }
+    float Hp { get; set; }
     int MaxHp { get; set; }
 
     void OnAttacked(OnAttackedArgs args);

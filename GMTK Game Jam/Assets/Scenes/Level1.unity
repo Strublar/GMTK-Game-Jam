@@ -350,7 +350,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: attack
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
@@ -1006,7 +1006,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: attack
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
@@ -1280,7 +1280,7 @@ PrefabInstance:
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
       propertyPath: attack
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad7a0604237850d4599a5ff7af902f8a, type: 3}
@@ -1468,6 +1468,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
         type: 3}
+      propertyPath: healPerSecond
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
+        type: 3}
       propertyPath: maxChargeTime
       value: 2
       objectReference: {fileID: 0}
@@ -1480,6 +1485,11 @@ PrefabInstance:
         type: 3}
       propertyPath: moveSpeedSplit
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
+        type: 3}
+      propertyPath: baseDmgPerSecond
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4515581016748863832, guid: 047a609f6469d0e40ace590d3fff6440,
         type: 3}

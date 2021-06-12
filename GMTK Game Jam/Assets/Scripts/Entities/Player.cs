@@ -7,11 +7,11 @@ public class Player : Entity, IAttackable
     public static Player p;
     public bool debug = false;
     [SerializeField] private int maxHp;
-    [SerializeField] private int hp;
+    [SerializeField] private float hp;
     [SerializeField] float moveSpeedSplit;
     private float moveSpeedCombined;
 
-    public int Hp { get => hp; set => hp = value; }
+    public float Hp { get => hp; set => hp = value; }
     private bool isCombined = true;
     public Soul soul;
     private Collider2D soulCollider;
@@ -30,6 +30,10 @@ public class Player : Entity, IAttackable
     [SerializeField] private float maxChargeTime;
     [SerializeField] private int minForce;
     [SerializeField] private int maxForce;
+
+    //variable related to the heal and damage from the soul
+    [SerializeField] float healPerSecond;
+    [SerializeField] float baseDmgPerSecond;
 
     private float lastDamageFrame;
     private float currentChargeTime;
@@ -112,6 +116,21 @@ public class Player : Entity, IAttackable
         #region Charge Throw
 
         currentChargeTime += isCharging ? Time.deltaTime : 0;
+        #endregion
+
+        #region health change from soul
+
+        if (isCombined)
+        {
+            hp += healPerSecond / 60f * Time.deltaTime;
+            hp = Mathf.Min(hp, maxHp);
+        }
+        else
+        {
+            float distance = (transform.position - soul.transform.position).magnitude;
+            hp -= baseDmgPerSecond / 60f * Time.deltaTime * distance;
+        }
+
         #endregion
     }
 

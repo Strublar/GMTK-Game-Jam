@@ -5,10 +5,18 @@ using UnityEngine;
 public class Projectile : Entity
 {
     [SerializeField] private float lifeTime;
+    [SerializeField] List<Sprite> sprites;
+    [SerializeField] SpriteRenderer spriteRenderer; 
 
     private bool hasImpact = false;
     private float currentLifeTime;
     public Vector3 direction;
+
+    private void Start()
+    {
+        int index = Random.Range(0, sprites.Count);
+        spriteRenderer.sprite = sprites[index];
+    }
 
     public void Update()
     {

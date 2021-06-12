@@ -7,15 +7,18 @@ public class Player : Entity, IAttackable
     public static Player p;
     public bool debug = false;
     [SerializeField] private int maxHp;
-    [SerializeField] private int hp;
+    [SerializeField] private float hp;
+    [SerializeField] float moveSpeedSplit;
+    private float moveSpeedCombined;
 
-    public int Hp { get => hp; set => hp = value; }
+    public float Hp { get => hp; set => hp = value; }
     private bool isCombined = true;
     public Soul soul;
     private Collider2D soulCollider;
     private bool isSoulInRange = true;
     private SpriteRenderer spriteRenderer;
     public float timerBeforeCombineAgain = 0f;
+    
 
     [SerializeField] private float immunityFrame;
 
@@ -27,6 +30,10 @@ public class Player : Entity, IAttackable
     [SerializeField] private float maxChargeTime;
     [SerializeField] private int minForce;
     [SerializeField] private int maxForce;
+
+    //variable related to the heal and damage from the soul
+    [SerializeField] float healPerSecond;
+    [SerializeField] float baseDmgPerSecond;
 
     private float lastDamageFrame;
     private float currentChargeTime;
@@ -47,6 +54,7 @@ public class Player : Entity, IAttackable
     public void Start()
     {
         lastDamageFrame = immunityFrame;
+        moveSpeedCombined = moveSpeed;
 
     }
 
@@ -63,14 +71,16 @@ public class Player : Entity, IAttackable
             if (IsCombined && timerBeforeCombineAgain <= 0)
             {
                 IsCombined = false;
-                timerBeforeCombineAgain = 2f;
+                soul.gameObject.SetActive(true);
+                moveSpeed = moveSpeedSplit;
+                timerBeforeCombineAgain = 1f;
             }
 
-            if (!IsCombined && timerBeforeCombineAgain <= 0 && isSoulInRange)
+            /*if (!IsCombined && timerBeforeCombineAgain <= 0 && isSoulInRange)
             {
                 IsCombined = true;
                 timerBeforeCombineAgain = 2f;
-            }
+            }*/
         }
 
 
@@ -107,13 +117,31 @@ public class Player : Entity, IAttackable
 
         currentChargeTime += isCharging ? Time.deltaTime : 0;
         #endregion
+
+        #region health change from soul
+
+        if (isCombined)
+        {
+            hp += healPerSecond / 60f * Time.deltaTime;
+            hp = Mathf.Min(hp, maxHp);
+        }
+        else
+        {
+            float distance = (transform.position - soul.transform.position).magnitude;
+            hp -= baseDmgPerSecond / 60f * Time.deltaTime * distance;
+        }
+
+        #endregion
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.name == "Soul")
+        if (col.name == "Soul" && timerBeforeCombineAgain <= 0)
         {
-            isSoulInRange = true;
+            //isSoulInRange = true;
+            IsCombined = true;
+            moveSpeed = moveSpeedCombined;
+            soul.gameObject.SetActive(false);
         }
 
     }

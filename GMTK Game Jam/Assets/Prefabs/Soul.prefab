@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2983732439710503547}
   - component: {fileID: 2983732439710503546}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,11 +70,11 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fcc25a8bc6bd02348a49b29de9fb0bb5, type: 3}
-  m_Color: {r: 0.8773585, g: 0.16140087, b: 0.31615806, a: 0.3647059}
-  m_FlipX: 1
-  m_FlipY: 1
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 88abce25ad0c29d4ba8f6c3776d885e1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_FlipX: 0
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -93,9 +93,8 @@ GameObject:
   - component: {fileID: 232004744180618023}
   - component: {fileID: 2983732439719322926}
   - component: {fileID: 2983732439719322927}
-  - component: {fileID: 7208929513861981042}
   - component: {fileID: 6444065356564095944}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Soul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +108,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6289700033922881882}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.6431797, y: -1.2722411, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -151,7 +150,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,24 +161,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.55}
+  m_Size: {x: 0.56, y: 1.08}
   m_EdgeRadius: 0
---- !u!58 &7208929513861981042
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6289700033922881882}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.22
 --- !u!114 &6444065356564095944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,5 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f768fc1873b2a4498048d26f55df25c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.98
+  moveSpeed: 4
   attack: 0

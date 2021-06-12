@@ -6,7 +6,7 @@ public class Enemy : Entity, IAttackable
 {
 
     [SerializeField] private float aggroRange;
-    [SerializeField] private int hp;
+    [SerializeField] private float hp;
     [SerializeField] private int maxHp;
 
     [SerializeField] private float immunityFrame;
@@ -14,7 +14,7 @@ public class Enemy : Entity, IAttackable
     private float lastDamageFrame;
     
 
-    public int Hp { get => hp; set => hp = value; }
+    public float Hp { get => hp; set => hp = value; }
     public float ImmunityFrame { get => immunityFrame; set => immunityFrame = value; }
     public float AggroRange { get => aggroRange; set => aggroRange = value; }
     public float LastDamageFrame { get => lastDamageFrame; set => lastDamageFrame = value; }

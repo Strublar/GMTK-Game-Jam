@@ -21,5 +21,14 @@ public class PlayerController : MonoBehaviour
 
         player.Move(direction, Time.deltaTime) ;
 
+        if(player.isCombined == false)
+        {
+            player.soul.Move(-direction, Time.deltaTime);
+        }
+        else
+        {
+            player.soul.transform.position = player.transform.position;
+        }
+
     }
 }

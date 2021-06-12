@@ -52,12 +52,13 @@ public class Player : Entity, IAttackable
         p = this;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         soulCollider = soul.GetComponent<Collider2D>();
+        if (GameManager.Instance != null) spriteRenderer.sprite = GameManager.Instance.selectedCharacter;
     }
     public void Start()
     {
         lastDamageFrame = immunityFrame;
         moveSpeedCombined = moveSpeed;
-
+        
     }
 
     void Update()

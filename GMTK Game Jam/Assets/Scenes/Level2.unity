@@ -2248,11 +2248,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2050179664642279154, guid: aca4ba0f32cbd6245aff230df8c72426,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.92
-      objectReference: {fileID: 0}
     - target: {fileID: 4100230767287573462, guid: aca4ba0f32cbd6245aff230df8c72426,
         type: 3}
       propertyPath: m_RootOrder
@@ -2312,16 +2307,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallsLvl2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7640895090565387585, guid: aca4ba0f32cbd6245aff230df8c72426,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -13.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108397059045325940, guid: aca4ba0f32cbd6245aff230df8c72426,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca4ba0f32cbd6245aff230df8c72426, type: 3}
@@ -2616,6 +2601,8 @@ MonoBehaviour:
   unit: {fileID: 2499698835328630244}
   greenBar: {fileID: 0}
   greenBarSprite: {fileID: 7715964093428406083}
+  feedbackLife: {fileID: 0}
+  maxFeedbackOpacity: 0
 --- !u!114 &7949649066444594391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2631,6 +2618,8 @@ MonoBehaviour:
   unit: {fileID: 2499698835650160302}
   greenBar: {fileID: 0}
   greenBarSprite: {fileID: 7715964093640920073}
+  feedbackLife: {fileID: 0}
+  maxFeedbackOpacity: 0
 --- !u!4 &8005225458090481690
 Transform:
   m_ObjectHideFlags: 0

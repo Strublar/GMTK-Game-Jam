@@ -10,4 +10,12 @@ public class Door : MonoBehaviour, IInteractable
     {
         throw new System.NotImplementedException();
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 10)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

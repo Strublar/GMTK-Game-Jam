@@ -7,7 +7,11 @@ public class Level2Manager : MonoBehaviour
     int step;
     [SerializeField] DialogBox dialogBox;
     [SerializeField] List<Enemy> enemies;
-    [SerializeField] Door door;
+    [SerializeField] Door firstDoor;
+    [SerializeField] List<Door> outsideDoors;
+    bool outsideActivated = false;
+    [SerializeField] List<Door> cafeteriaDoors;
+    bool cafeteriaActivated = false;
 
     bool isEnteredMainHall;
     bool isEnteredOutside;
@@ -36,10 +40,9 @@ public class Level2Manager : MonoBehaviour
     private IEnumerator EndTuto()
     {
         string text = "Good Job! Time to spread happyness.";
-        foreach (Enemy enemy in enemies)
-        {
-            enemy.AggroRange = 10f;
-        }
+        enemies[0].AggroRange = 10f;
+        enemies[1].AggroRange = 10f;
+        enemies[2].AggroRange = 10f;
         StartCoroutine(dialogBox.TypeDialog(text));
         yield return new WaitForSeconds(4f);
         dialogBox.textBox.SetActive(false);
@@ -47,12 +50,41 @@ public class Level2Manager : MonoBehaviour
 
     private void Update()
     {
-        /*if (door.IsOpen && step == 0)
+        if (firstDoor == null && step == 0)
         {
             step++;
             StopAllCoroutines();
             StartCoroutine(EndTuto());
-        }*/
+        }
+        if (!outsideActivated)
+        {
+            for(int i = 0; i < outsideDoors.Count; i++)
+            {
+                if(outsideDoors[i] == null)
+                {
+                    enemies[3].AggroRange = 10f;
+                    enemies[4].AggroRange = 10f;
+                    enemies[5].AggroRange = 10f;
+                    enemies[6].AggroRange = 10f;
+                    outsideActivated = true;
+                }
+            }
+        }
+        if (!cafeteriaActivated)
+        {
+            for (int i = 0; i < cafeteriaDoors.Count; i++)
+            {
+                if (cafeteriaDoors[i] == null)
+                {
+                    enemies[7].AggroRange = 10f;
+                    enemies[8].AggroRange = 10f;
+                    enemies[9].AggroRange = 10f;
+                    enemies[10].AggroRange = 10f;
+                    cafeteriaActivated = true;
+                }
+            }
+        }
+
         if (AllEnemiesAreHappy() && step == 1)
         {
             step++;

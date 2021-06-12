@@ -13,10 +13,19 @@ public class Player : Entity, IAttackable
     private bool isSoulInRange = true;
     public SpriteRenderer spriteRenderer;
     public float timerBeforeCombineAgain = 0f;
-    
+    [SerializeField] private float immunityFrame;
+    private float lastDamageFrame;
+    [SerializeField] private GameObject model;
+    [SerializeField] private Rigidbody2D rb;
+
+    public float ImmunityFrame { get => immunityFrame; set => immunityFrame = value; }
+    public float LastDamageFrame { get => lastDamageFrame; set => lastDamageFrame = value; }
+
+
     void Update()
     {
-        if(timerBeforeCombineAgain > 0)
+        #region Timer combine
+        if (timerBeforeCombineAgain > 0)
         {
             timerBeforeCombineAgain -= Time.deltaTime;
         }
@@ -46,6 +55,25 @@ public class Player : Entity, IAttackable
         {
             spriteRenderer.color = Color.white;
         }
+        #endregion
+
+        #region Damage immunity
+        rb.velocity *= 0.9f;
+        lastDamageFrame += Time.deltaTime;
+        model.SetActive(true);
+        int flashPerSecond = 3;
+        if (lastDamageFrame < immunityFrame)
+        {
+            if ((lastDamageFrame * flashPerSecond - Mathf.Floor(lastDamageFrame * flashPerSecond)) < 0.5f)
+            {
+                model.SetActive(false);
+            }
+            else
+            {
+                model.SetActive(true);
+            }
+        }
+        #endregion
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -64,16 +92,7 @@ public class Player : Entity, IAttackable
             isSoulInRange = false;
         }
     }
-
-    [SerializeField] private int hp;
-    [SerializeField] private float immunityFrame;
-    private float lastDamageFrame;
-    [SerializeField] private GameObject model;
-    [SerializeField] private Rigidbody2D rb;
-
-    public int Hp { get => hp; set => hp = value; }
-    public float ImmunityFrame { get => immunityFrame; set => immunityFrame = value; }
-    public float LastDamageFrame { get => lastDamageFrame; set => lastDamageFrame = value; }
+    
 
     public void Awake()
     {
@@ -84,25 +103,6 @@ public class Player : Entity, IAttackable
         lastDamageFrame = immunityFrame;
         
     }
-    public void Update()
-    {
-        rb.velocity *= 0.9f;
-        lastDamageFrame += Time.deltaTime;
-        model.SetActive(true);
-        int flashPerSecond = 3;
-        if(lastDamageFrame < immunityFrame)
-        {
-            if((lastDamageFrame * flashPerSecond - Mathf.Floor(lastDamageFrame * flashPerSecond))<0.5f)
-            {
-                model.SetActive(false);
-            }
-            else
-            {
-                model.SetActive(true);
-            }
-        }
-    }
-
     public void OnAttacked(OnAttackedArgs args)
     {
         if(lastDamageFrame>immunityFrame)

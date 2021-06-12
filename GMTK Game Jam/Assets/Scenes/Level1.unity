@@ -349,6 +349,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}
+      propertyPath: hp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
+        type: 3}
+      propertyPath: maxHp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
+        type: 3}
       propertyPath: attack
       value: 20
       objectReference: {fileID: 0}
@@ -1251,6 +1261,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
+        type: 3}
+      propertyPath: hp
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
+        type: 3}
+      propertyPath: maxHp
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,
         type: 3}

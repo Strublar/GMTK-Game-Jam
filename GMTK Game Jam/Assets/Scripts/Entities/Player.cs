@@ -20,6 +20,7 @@ public class Player : Entity, IAttackable
     private float lastDamageFrame;
     [SerializeField] private GameObject model;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private GameObject projectilePrefab;
 
     public float ImmunityFrame { get => immunityFrame; set => immunityFrame = value; }
     public float LastDamageFrame { get => lastDamageFrame; set => lastDamageFrame = value; }

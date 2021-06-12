@@ -80,6 +80,7 @@ public class Level1Manager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 step++;
+                StopAllCoroutines();
                 StartCoroutine(Tuto3());
             }
         }

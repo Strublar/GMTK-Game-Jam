@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : Entity, IAttackable
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private ParticleSystem happyVFX;
 
     [SerializeField] private float aggroRange;
     [SerializeField] private float hp;
@@ -47,9 +48,16 @@ public class Enemy : Entity, IAttackable
 
     private void BecomeHappy()
     {
-        spriteRenderer.color = Color.white;
-        IsHappy = true;
-        moveSpeed = 0;
+        if(!IsHappy)
+        {
+            IsHappy = true;
+
+            spriteRenderer.color = Color.white;
+
+            moveSpeed = 0;
+            happyVFX.Play();
+        }
+        
     }
 
     

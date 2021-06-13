@@ -34,7 +34,6 @@ public class Player : Entity, IAttackable
     //variable related to the heal and damage from the soul
     [SerializeField] float healPerSecond;
     [SerializeField] float baseDmgPerSecond;
-    [SerializeField] private AudioSource throwSound;
     [SerializeField] private ChargingBar chargingBar;
 
     private float lastDamageFrame;
@@ -227,7 +226,7 @@ public class Player : Entity, IAttackable
         soul.gameObject.SetActive(true);
         moveSpeed = moveSpeedSplit;
         timerBeforeCombineAgain = 1f;
-        PlaySound(separationSounds);
+        SoundManager.PlaySound(separationSounds);
         splitVFX.Play();
     }
 
@@ -237,18 +236,14 @@ public class Player : Entity, IAttackable
         moveSpeed = moveSpeedCombined;
         soul.Combine();
         soul.gameObject.SetActive(false);
-        PlaySound(aspirationSounds);
+        SoundManager.PlaySound(aspirationSounds);
         combineVFX.Play();
     }
 
-    public void Die()
+    public override void Die()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    public void PlaySound(GameObject sound)
-    {
-        AudioSource[] sources = sound.GetComponents<AudioSource>();
-        sources[Random.Range(0, sources.Length - 1)].Play();
-    }
+    
 
 }

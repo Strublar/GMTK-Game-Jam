@@ -6,6 +6,7 @@ public class Enemy : Entity, IAttackable
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private ParticleSystem happyVFX;
+    [SerializeField] protected GameObject happySound;
 
     [SerializeField] private float aggroRange;
     [SerializeField] private float hp;
@@ -15,6 +16,8 @@ public class Enemy : Entity, IAttackable
     [SerializeField] private Rigidbody2D rb;
     private float lastDamageFrame;
     [SerializeField] protected float wanderTimer;
+
+
     protected float baseWanderTimer;
     public bool IsHappy { get; set; }
     
@@ -75,6 +78,7 @@ public class Enemy : Entity, IAttackable
 
             moveSpeed = 0;
             happyVFX.Play();
+            SoundManager.PlaySound(happySound);
             //Player.p.Hp += 5;
         }
         
@@ -88,5 +92,4 @@ public class Enemy : Entity, IAttackable
         rb.AddForce(forceStrength * direction);
     }
 
-    
 }

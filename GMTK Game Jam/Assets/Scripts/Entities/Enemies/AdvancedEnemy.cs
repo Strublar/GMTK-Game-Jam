@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AdvancedEnemy : Enemy
 {
+
+
     private void OnTriggerStay2D(Collider2D other)
     {       
         OnAttackedArgs args = new OnAttackedArgs();

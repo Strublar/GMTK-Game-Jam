@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994401180511098329}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.14, y: -0.60000014, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5242673354623658277}
@@ -82,7 +82,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.3
 --- !u!58 &5200392600605534789
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.05
 --- !u!114 &5717492163758356907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   attack: 0
+  hasLink: 0
   lifeTime: 2
   spritesGrey:
   - {fileID: 21300000, guid: e1a134ba3535a4849b0a52892cd29814, type: 3}
@@ -277,7 +278,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a3cb74b762b02724e95a1d579877bd13, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -373,7 +374,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a12aa97f9942a894191f15003297a6b2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -469,7 +470,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0f0329cb1ea283b41b2a57be803e498a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -565,7 +566,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a3cb74b762b02724e95a1d579877bd13, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

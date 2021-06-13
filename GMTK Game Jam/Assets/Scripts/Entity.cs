@@ -15,6 +15,7 @@ public class Entity : MonoBehaviour
     public virtual void Move(Vector3 direction, float duration)
     {
         transform.position += moveSpeed * direction * duration ;
+        
     }
 
     public virtual void Attack(IAttackable target)

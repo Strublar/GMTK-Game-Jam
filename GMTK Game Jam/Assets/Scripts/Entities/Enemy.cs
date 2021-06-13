@@ -15,7 +15,6 @@ public class Enemy : Entity, IAttackable
     [SerializeField] private Rigidbody2D rb;
     private float lastDamageFrame;
     [SerializeField] protected float wanderTimer;
-    [SerializeField] private ParticleSystem bumpVFX;
     protected float baseWanderTimer;
     public bool IsHappy { get; set; }
     

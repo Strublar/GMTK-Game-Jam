@@ -236,8 +236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bb22ee75f48d94a9bac3ad74bf3bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
+  moveSpeed: 5
   attack: 20
+  hasLink: 0
   spriteRenderer: {fileID: 529013987280332176}
   happyVFX: {fileID: 8554218233915536187}
   aggroRange: 20
@@ -246,6 +247,7 @@ MonoBehaviour:
   immunityFrame: 1
   rb: {fileID: 8341099297333664581}
   wanderTimer: 3
+  bumpVFX: {fileID: 0}
 --- !u!70 &314042188265684333
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

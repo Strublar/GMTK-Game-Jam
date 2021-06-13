@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 199851566}
   - component: {fileID: 199851567}
   - component: {fileID: 199851568}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 230069521}
   - component: {fileID: 230069522}
   - component: {fileID: 230069523}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2plantecafet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1416,7 +1416,7 @@ GameObject:
   - component: {fileID: 530480104}
   - component: {fileID: 530480105}
   - component: {fileID: 530480106}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2table (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1643,7 +1643,7 @@ GameObject:
   - component: {fileID: 690312730}
   - component: {fileID: 690312731}
   - component: {fileID: 690312732}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2locker (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1752,7 +1752,7 @@ GameObject:
   - component: {fileID: 690813716}
   - component: {fileID: 690813717}
   - component: {fileID: 690813718}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2plant3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2124,7 +2124,7 @@ GameObject:
   - component: {fileID: 974847076}
   - component: {fileID: 974847077}
   - component: {fileID: 974847078}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2locker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2479,7 +2479,7 @@ GameObject:
   - component: {fileID: 1073458551}
   - component: {fileID: 1073458552}
   - component: {fileID: 1073458553}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2table (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3039,7 +3039,7 @@ GameObject:
   - component: {fileID: 1289990028}
   - component: {fileID: 1289990029}
   - component: {fileID: 1289990030}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2rail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3249,7 +3249,7 @@ GameObject:
   - component: {fileID: 1384271252}
   - component: {fileID: 1384271253}
   - component: {fileID: 1384271254}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2banc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3531,7 +3531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1476110096}
   - component: {fileID: 1476110097}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2cafet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3809,7 +3809,7 @@ GameObject:
   - component: {fileID: 1580009068}
   - component: {fileID: 1580009069}
   - component: {fileID: 1580009070}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2plantecafet (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4084,7 +4084,7 @@ GameObject:
   - component: {fileID: 1597943682}
   - component: {fileID: 1597943683}
   - component: {fileID: 1597943684}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2banc (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4234,7 +4234,7 @@ GameObject:
   - component: {fileID: 1626841754}
   - component: {fileID: 1626841755}
   - component: {fileID: 1626841756}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2plant1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4333,7 +4333,7 @@ GameObject:
   - component: {fileID: 1641530669}
   - component: {fileID: 1641530670}
   - component: {fileID: 1641530671}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2panneau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4638,7 +4638,7 @@ GameObject:
   - component: {fileID: 1732933126}
   - component: {fileID: 1732933127}
   - component: {fileID: 1732933128}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2plant2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5750,7 +5750,7 @@ GameObject:
   - component: {fileID: 2140289325}
   - component: {fileID: 2140289326}
   - component: {fileID: 2140289327}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau2statue
   m_TagString: Untagged
   m_Icon: {fileID: 0}

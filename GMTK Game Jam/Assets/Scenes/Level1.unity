@@ -3509,6 +3509,27 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5420733756703933565, guid: f28b0d56b857e304292cc34f0cee51c0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dec4c9d789c324443993b9906af55e9d,
+        type: 3}
+    - target: {fileID: 5420733756703933565, guid: f28b0d56b857e304292cc34f0cee51c0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5849056
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420733756703933565, guid: f28b0d56b857e304292cc34f0cee51c0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5849056
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420733756703933565, guid: f28b0d56b857e304292cc34f0cee51c0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5849056
+      objectReference: {fileID: 0}
     - target: {fileID: 6578527515080242795, guid: f28b0d56b857e304292cc34f0cee51c0,
         type: 3}
       propertyPath: m_Name
@@ -4819,6 +4840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 1011467374}
   textMesh: {fileID: 2064158931}
+  lettersPerSecond: 30
 --- !u!114 &2059515110 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7203839023773757712, guid: ad7a0604237850d4599a5ff7af902f8a,

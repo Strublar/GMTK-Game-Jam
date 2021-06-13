@@ -7,6 +7,7 @@ public class Entity : MonoBehaviour
     #region Attributes
     public float moveSpeed;
     public int attack;
+    public bool hasLink = false;
     #endregion
 
     #region Methods

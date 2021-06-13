@@ -75,7 +75,7 @@ public class Enemy : Entity, IAttackable
 
             moveSpeed = 0;
             happyVFX.Play();
-            Player.p.Hp += 5;
+            //Player.p.Hp += 5;
         }
         
     }

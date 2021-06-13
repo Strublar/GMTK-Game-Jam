@@ -17,20 +17,5 @@ public class BasicEnemy : Enemy
 
     }
 
-    public void Update()
-    {
-        Vector3 direction = Player.p.transform.position - transform.position;
-        if (direction.magnitude <= AggroRange)
-        {
-            direction.Normalize();
-            Move(direction, Time.deltaTime);
-        }
-
-        wanderTimer -= Time.deltaTime;
-        if (IsHappy && wanderTimer <= 0f)
-        {
-            wanderTimer = baseWanderTimer;
-            Wander();
-        }
-    }
+    
 }

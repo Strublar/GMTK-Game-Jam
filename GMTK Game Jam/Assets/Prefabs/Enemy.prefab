@@ -214,7 +214,7 @@ MonoBehaviour:
   maxHp: 30
   immunityFrame: 1
   rb: {fileID: 7203839023773757726}
-  wanderTimer: 0
+  wanderTimer: 3
 --- !u!70 &3692354659212986701
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

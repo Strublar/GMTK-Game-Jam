@@ -81,19 +81,7 @@ public class Player : Entity, IAttackable
             timerBeforeCombineAgain -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (IsCombined && timerBeforeCombineAgain <= 0)
-            {
-                Split();
-            }
-
-            /*if (!IsCombined && timerBeforeCombineAgain <= 0 && isSoulInRange)
-            {
-                IsCombined = true;
-                timerBeforeCombineAgain = 2f;
-            }*/
-        }
+        
 
 
         if (isSoulInRange == false && debug == true)
@@ -239,6 +227,7 @@ public class Player : Entity, IAttackable
     {
         IsCombined = true;
         moveSpeed = moveSpeedCombined;
+        soul.Combine();
         soul.gameObject.SetActive(false);
         PlaySound(aspirationSounds);
         combineVFX.Play();

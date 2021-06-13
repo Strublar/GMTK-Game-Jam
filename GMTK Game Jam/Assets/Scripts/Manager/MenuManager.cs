@@ -6,10 +6,19 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-
+    [SerializeField] DialogBox dialogBox;
     [SerializeField] private Slider keyboardCursor;
     [SerializeField]
     private GameObject menu, credit, settings;
+
+    [TextArea]
+    [SerializeField] string introText;
+
+    private void Start()
+    {
+        StartCoroutine(dialogBox.TypeDialog(introText));
+
+    }
 
     public void OnPlayClicked()
     {

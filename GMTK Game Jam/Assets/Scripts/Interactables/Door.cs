@@ -15,7 +15,7 @@ public class Door : MonoBehaviour, IInteractable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 10)
+        if(collision.gameObject.layer == 8)
         {
             doorOpen.SetActive(true);
             doorClose.SetActive(false);

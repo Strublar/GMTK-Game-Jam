@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             {
                 moveDirection.Normalize();
 
-                Debug.Log("Move !");
+               //Debug.Log("Move !");
 
                 player.soul.Move(moveDirection, Time.deltaTime);
             }

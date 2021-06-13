@@ -50,7 +50,7 @@ public class Level2Manager : MonoBehaviour
 
     private void Update()
     {
-        if (firstDoor == null && step == 0)
+        if (firstDoor.IsOpen && step == 0)
         {
             step++;
             StopAllCoroutines();
@@ -60,7 +60,7 @@ public class Level2Manager : MonoBehaviour
         {
             for(int i = 0; i < outsideDoors.Count; i++)
             {
-                if(outsideDoors[i] == null)
+                if(outsideDoors[i].IsOpen)
                 {
                     enemies[3].AggroRange = 10f;
                     enemies[4].AggroRange = 10f;
@@ -74,7 +74,7 @@ public class Level2Manager : MonoBehaviour
         {
             for (int i = 0; i < cafeteriaDoors.Count; i++)
             {
-                if (cafeteriaDoors[i] == null)
+                if (cafeteriaDoors[i].IsOpen)
                 {
                     enemies[7].AggroRange = 10f;
                     enemies[8].AggroRange = 10f;

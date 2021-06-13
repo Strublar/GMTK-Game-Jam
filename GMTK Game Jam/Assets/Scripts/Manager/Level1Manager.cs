@@ -49,7 +49,7 @@ public class Level1Manager : MonoBehaviour
         yield return new WaitForSeconds(4f);
         text = "To regenerate energy simply reunite with your soul by placing your mouse on top of you.";
         StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         text = "Last the link betweeen you and your soul bring peace of mind to people. Try to appease your sister next room.";
         StartCoroutine(dialogBox.TypeDialog(text));
     }

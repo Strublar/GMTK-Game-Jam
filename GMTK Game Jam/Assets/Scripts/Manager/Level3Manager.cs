@@ -50,7 +50,7 @@ public class Level3Manager : MonoBehaviour
         //Animation from soul becoming stronger
         text = "Thank you so much for playing our game.";
         StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         UnityEngine.SceneManagement.SceneManager.LoadScene("StartMenu");
     }
 }

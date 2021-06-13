@@ -9,7 +9,8 @@ public class IntroManager : MonoBehaviour
     bool isStoryComplete = true;
     GameManager gameManager;
     [SerializeField] List<Sprite> sprites;
-
+    [SerializeField] private GameObject selectionCharacter;
+    [SerializeField] private float timer;
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -18,11 +19,18 @@ public class IntroManager : MonoBehaviour
     private void Start()
     {
         //StartCoroutine(IntroText());
+        
     }
 
     private void Update()
     {
-        if(isCharacterPicked && isStoryComplete)
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            selectionCharacter.SetActive(true);
+        }
+
+        if (isCharacterPicked && isStoryComplete)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
         }

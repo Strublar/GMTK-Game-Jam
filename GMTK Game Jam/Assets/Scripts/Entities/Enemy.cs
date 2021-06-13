@@ -16,7 +16,7 @@ public class Enemy : Entity, IAttackable
     [SerializeField] private Rigidbody2D rb;
     private float lastDamageFrame;
     [SerializeField] protected float wanderTimer;
-
+    public bool isHappy;
 
     protected float baseWanderTimer;
     public bool IsHappy { get; set; }
@@ -31,7 +31,8 @@ public class Enemy : Entity, IAttackable
     private void Start()
     {
         spriteRenderer.color = Color.grey;
-        IsHappy = false;
+        if (isHappy)
+            BecomeHappy();
         baseWanderTimer = wanderTimer;
     }
 

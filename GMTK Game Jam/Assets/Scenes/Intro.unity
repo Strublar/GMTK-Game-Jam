@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -290,13 +290,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -463,7 +463,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 200
+  m_Spacing: 150
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -555,7 +555,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1124355549}
         m_TargetAssemblyTypeName: IntroManager, Assembly-CSharp
-        m_MethodName: PickCharacterF
+        m_MethodName: PickCharacterG
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -585,7 +585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8e6ada2669a61cb469044a50b855f82a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f2bc1ae8f53bd1429d52b5cb6b84409, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -614,6 +614,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TextBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665823339103027062, guid: 4a11432cbc98337418586dacad61a779,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8665823339103027063, guid: 4a11432cbc98337418586dacad61a779,
         type: 3}
@@ -836,7 +841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ec6188c470ca373479adf73666a42264, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 655b98b88b067f6499dc138fb71daf24, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -917,6 +922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 1760152059}
   textMesh: {fileID: 1336279666}
+  lettersPerSecond: 30
 --- !u!1 &1312207504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +1007,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1124355549}
         m_TargetAssemblyTypeName: IntroManager, Assembly-CSharp
-        m_MethodName: PickCharacterG
+        m_MethodName: PickCharacterF
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1031,7 +1037,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dfb664a4a4e01bd49ad031f6c101ac54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a1802e1105d0874c9b4422bb587eb06, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1277,6 +1283,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -168}
   m_SizeDelta: {x: 0, y: 700}
   m_Pivot: {x: 0.5, y: 1}

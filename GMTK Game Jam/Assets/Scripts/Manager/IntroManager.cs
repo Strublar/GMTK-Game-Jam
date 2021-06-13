@@ -6,7 +6,7 @@ public class IntroManager : MonoBehaviour
 {
     [SerializeField] DialogBox dialogBox;
     bool isCharacterPicked;
-    bool isStoryComplete;
+    bool isStoryComplete = true;
     GameManager gameManager;
     [SerializeField] List<Sprite> sprites;
 
@@ -17,7 +17,7 @@ public class IntroManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(IntroText());
+        //StartCoroutine(IntroText());
     }
 
     private void Update()
@@ -42,13 +42,13 @@ public class IntroManager : MonoBehaviour
         isStoryComplete = true;
     }
 
-    public void PickCharacterG()
+    public void PickCharacterF()
     {
         if (gameManager != null) gameManager.selectedCharacter = 0;
         isCharacterPicked = true;
     }
 
-    public void PickCharacterF()
+    public void PickCharacterG()
     {
         if (gameManager != null) gameManager.selectedCharacter = 1;
         isCharacterPicked = true;

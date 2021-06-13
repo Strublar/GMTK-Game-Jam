@@ -7,7 +7,7 @@ public class DialogBox : MonoBehaviour
 {
     public GameObject textBox;
     [SerializeField] TextMeshProUGUI textMesh;
-    int lettersPerSecond = 30;
+    [SerializeField] int lettersPerSecond = 30;
 
     public IEnumerator TypeDialog(string dialog, float delayInSec = 0f)
     {

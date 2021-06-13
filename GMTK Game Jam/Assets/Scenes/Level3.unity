@@ -401,6 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 1592642263}
   textMesh: {fileID: 1592642262}
+  lettersPerSecond: 30
 --- !u!1001 &544828039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -613,7 +614,7 @@ GameObject:
   - component: {fileID: 811654250}
   - component: {fileID: 811654252}
   - component: {fileID: 811654251}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: "niveau3balan\xE7oire"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1228,7 +1229,7 @@ GameObject:
   - component: {fileID: 1434865386}
   - component: {fileID: 1434865387}
   - component: {fileID: 1434865388}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau3poubelle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1327,7 +1328,7 @@ GameObject:
   - component: {fileID: 1450006439}
   - component: {fileID: 1450006441}
   - component: {fileID: 1450006440}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau3lactop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1656,7 +1657,7 @@ GameObject:
   - component: {fileID: 1528888728}
   - component: {fileID: 1528888727}
   - component: {fileID: 1528888726}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau3sport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1947,7 +1948,7 @@ GameObject:
   - component: {fileID: 1562364290}
   - component: {fileID: 1562364291}
   - component: {fileID: 1562364292}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau3poubelle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2462,7 +2463,7 @@ GameObject:
   - component: {fileID: 1924859548}
   - component: {fileID: 1924859549}
   - component: {fileID: 1924859550}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau3poubelle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2777,7 +2778,7 @@ GameObject:
   - component: {fileID: 2055144963}
   - component: {fileID: 2055144965}
   - component: {fileID: 2055144964}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: niveau3lacbot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

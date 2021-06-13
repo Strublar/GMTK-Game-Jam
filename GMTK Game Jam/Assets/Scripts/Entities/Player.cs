@@ -21,8 +21,7 @@ public class Player : Entity, IAttackable
     
 
     [SerializeField] private float immunityFrame;
-
-    [SerializeField] private GameObject model;
+    [SerializeField] private Model model;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject projectilePrefab, projectileContainer;
 
@@ -35,10 +34,19 @@ public class Player : Entity, IAttackable
     [SerializeField] float baseDmgPerSecond;
     [SerializeField] private ChargingBar chargingBar;
 
+    [SerializeField] private SpriteRenderer srTete;
+    [SerializeField] private SpriteRenderer srMeche;
+    [SerializeField] private SpriteRenderer srCorps;
+    [SerializeField] private SpriteRenderer srBrasG;
+    [SerializeField] private SpriteRenderer srJambeD;
+    [SerializeField] private SpriteRenderer srJambeG;
+    public Animator animatorPlayer;
+
     private float lastDamageFrame;
     private float currentCooldown;
     private bool isCharging;
     [SerializeField] public int Level;
+
 
     #region Sounds containers
     [SerializeField] private GameObject aspirationSounds,separationSounds,throwSounds;
@@ -57,12 +65,26 @@ public class Player : Entity, IAttackable
     public int MaxHp { get => maxHp; set => maxHp = value; }
     public bool IsCharging { get => isCharging; set => isCharging = value; }
 
+    public Model getModel()
+    {
+        return model;
+    }
+
+    public void setModel(Model model)
+    {
+        this.model = model;
+    }
+
     public void Awake()
     {
         p = this;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         soulCollider = soul.GetComponent<Collider2D>();
-        if (GameManager.Instance != null) spriteRenderer.sprite = GameManager.Instance.GetSprite();
+        if (GameManager.Instance != null)
+        {
+            p.model = GameManager.Instance.GetModel();
+            applyModel();
+        }
     }
     public void Start()
     {
@@ -96,17 +118,17 @@ public class Player : Entity, IAttackable
         #region Damage immunity
         rb.velocity *= 0.9f;
         lastDamageFrame += Time.deltaTime;
-        model.SetActive(true);
+        model.gameObject.SetActive(true);
         int flashPerSecond = 3;
         if (lastDamageFrame < immunityFrame)
         {
             if ((lastDamageFrame * flashPerSecond - Mathf.Floor(lastDamageFrame * flashPerSecond)) < 0.5f)
             {
-                model.SetActive(false);
+                model.gameObject.SetActive(false);
             }
             else
             {
-                model.SetActive(true);
+                model.gameObject.SetActive(true);
             }
         }
         #endregion
@@ -237,5 +259,27 @@ public class Player : Entity, IAttackable
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
+
+    private void applyModel()
+    {
+        srTete.sprite = model.spriteTete;
+
+        if(model.spriteMeche != null)
+        {
+            srMeche.sprite = model.spriteMeche;
+        }
+        else
+        {
+            srMeche.sprite = null;
+        }
+
+
+        srCorps.sprite = model.spriteCorps;
+        srBrasG.sprite = model.spriteBrasG;
+        srJambeD.sprite = model.spriteJambeD;
+        srJambeG.sprite = model.spriteJambeG;
+
+        animatorPlayer.runtimeAnimatorController = model.animator.runtimeAnimatorController;
+    }
 
 }

@@ -6,9 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [SerializeField] List<Sprite> firstCharacter;
-    [SerializeField] List<Sprite> secondCharacter;
-    [SerializeField] List<Sprite> thirdCharacter;
+    [SerializeField] List<Model> firstCharacter;
+    [SerializeField] List<Model> secondCharacter;
+    [SerializeField] List<Model> thirdCharacter;
     [HideInInspector] public int selectedCharacter;
 
     public enum KeyboardLanguage : int
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public Sprite GetSprite()
+    public Model GetModel()
     {
         string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         int index;

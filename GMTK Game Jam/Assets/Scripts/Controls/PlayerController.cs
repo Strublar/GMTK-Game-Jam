@@ -27,6 +27,14 @@ public class PlayerController : MonoBehaviour
             direction += Input.GetKey(KeyCode.D) ? Vector3.right : Vector3.zero;
         }
         
+        if(!(Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A)))
+        {
+            player.animatorPlayer.SetBool("IsWalking", false);
+        }
+        else
+        {
+            player.animatorPlayer.SetBool("IsWalking", true);
+        }
 
         direction.Normalize();
 
@@ -82,7 +90,18 @@ public class PlayerController : MonoBehaviour
         #region Bump
 
 
+<<<<<<< Updated upstream
         if (Input.GetMouseButtonDown(1) && player.Level>=2)
+=======
+        //TODO REMETTRE A 2
+        if (Input.GetMouseButtonDown(0) && player.Level>=1)
+        {
+            player.StartCharging();
+            player.animatorPlayer.SetBool("IsChargingShoot", true);
+            Debug.Log("Start charging");
+        }
+        if (Input.GetMouseButtonUp(0) && player.Level >= 1)
+>>>>>>> Stashed changes
         {
             //player.StartCharging();
             //Debug.Log("Start charging");
@@ -91,8 +110,14 @@ public class PlayerController : MonoBehaviour
             Vector3 fireDirection = mousePos - player.transform.position;
             fireDirection.Normalize();
 
+<<<<<<< Updated upstream
             Debug.Log("Bump !");
             player.Bump(fireDirection);
+=======
+            Debug.Log("Fire !");
+            player.animatorPlayer.SetBool("IsChargingShoot", false);
+            player.Fire(fireDirection);
+>>>>>>> Stashed changes
         }
 /*        if (Input.GetMouseButtonUp(1) && player.Level >= 2)
         {

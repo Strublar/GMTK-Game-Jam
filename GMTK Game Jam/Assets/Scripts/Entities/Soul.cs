@@ -10,7 +10,7 @@ public class Soul : Entity
     [SerializeField] private Link playerLink;
     [SerializeField] private float bumpRadius;
     [SerializeField] private ParticleSystem bumpVFX;
-
+    [SerializeField] GameObject bumpSounds;
     private List<GameObject> linkList = new List<GameObject>();
 
     public void Awake()
@@ -48,6 +48,7 @@ public class Soul : Entity
             }
         }
         bumpVFX.Play();
+        SoundManager.PlaySound(bumpSounds);
     }
     public void Combine()
     {

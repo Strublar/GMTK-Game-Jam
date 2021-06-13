@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
         #region Bump
 
 
-        if (Input.GetMouseButtonDown(1) && player.Level>=2)
+        if (Input.GetMouseButtonDown(1) && player.Level>=2 && !player.IsCombined)
         {
             //player.StartCharging();
             //Debug.Log("Start charging");

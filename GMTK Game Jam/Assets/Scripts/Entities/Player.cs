@@ -41,7 +41,8 @@ public class Player : Entity, IAttackable
     [SerializeField] public int Level;
 
     #region Sounds containers
-    [SerializeField] private GameObject aspirationSounds,separationSounds,throwSounds;
+    [SerializeField] private GameObject aspirationSounds,separationSounds,throwSounds,
+        hitGirlSounds,hitBoySounds,deathBoySounds,deathGirlSounds;
     #endregion
     #region VFX
 
@@ -176,6 +177,14 @@ public class Player : Entity, IAttackable
 
             //Damages
             hp -= args.damage;
+            if (GameManager.Instance.selectedCharacter == 0)
+            {
+                SoundManager.PlaySound(hitGirlSounds);
+            }
+            else
+            {
+                SoundManager.PlaySound(hitBoySounds);
+            }
 
             //Force
             int forceStrength = 1500;
@@ -234,6 +243,16 @@ public class Player : Entity, IAttackable
 
     public override void Die()
     {
+        if(GameManager.Instance.selectedCharacter == 0)
+        {
+            SoundManager.PlaySound(deathGirlSounds);
+        }
+        else
+        {
+            SoundManager.PlaySound(deathBoySounds);
+        }
+
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     

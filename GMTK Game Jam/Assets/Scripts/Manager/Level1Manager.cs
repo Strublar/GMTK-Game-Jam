@@ -32,7 +32,7 @@ public class Level1Manager : MonoBehaviour
     private IEnumerator Tuto2()
     {
         yield return new WaitForSeconds(2f);
-        string text = "You can separate from your soul by pressing space.";
+        string text = "You can separate from your soul by clicking your left mouse button.";
         StartCoroutine(dialogBox.TypeDialog(text));
         step++;
         yield return null;
@@ -41,19 +41,16 @@ public class Level1Manager : MonoBehaviour
     private IEnumerator Tuto3()
     {
         yield return new WaitForSeconds(1f);
-        string text = "Your soul move in the opposite direction of your physical body.";
+        string text = "Your soul follow your mouse cursor.";
         StartCoroutine(dialogBox.TypeDialog(text));
         yield return new WaitForSeconds(4f);
         text = "When separated you lose energy depending from how far your soul is.";
         StartCoroutine(dialogBox.TypeDialog(text));
         yield return new WaitForSeconds(4f);
-        text = "To regenerate energy simply reunite with your soul by keeping space pressed.";
+        text = "To regenerate energy simply reunite with your soul by placing your mouse on top of you.";
         StartCoroutine(dialogBox.TypeDialog(text));
         yield return new WaitForSeconds(4f);
-        text = "Last your soul bring peace of mind to people.";
-        StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(4f);
-        text = "Try to appease your sister next room.";
+        text = "Last the link betweeen you and your soul bring peace of mind to people. Try to appease your sister next room.";
         StartCoroutine(dialogBox.TypeDialog(text));
     }
 
@@ -84,7 +81,7 @@ public class Level1Manager : MonoBehaviour
         }
         if(step == 2)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButtonDown(0))
             {
                 step++;
                 StopAllCoroutines();
@@ -94,6 +91,8 @@ public class Level1Manager : MonoBehaviour
         if(enemies[0].IsHappy && step == 3)
         {
             step++;
+            enemies[1].AggroRange = 10;
+            enemies[2].AggroRange = 10;
             StopAllCoroutines();
             StartCoroutine(EndTuto());
         }
@@ -116,7 +115,14 @@ public class Level1Manager : MonoBehaviour
     private IEnumerator EndLevel()
     {
         dialogBox.textBox.SetActive(true);
-        string text = "Congratulations! Time to spread more happyness at your school.";
+        string text = "Congratulations! You feel more confident by helping your familly.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(4f);
+        text = "Your soul is growing.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(4f);
+        //Animation from soul becoming stronger
+        text = "Time to tackle a harder challenge at your school.";
         StartCoroutine(dialogBox.TypeDialog(text));
         yield return new WaitForSeconds(4f);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level2");

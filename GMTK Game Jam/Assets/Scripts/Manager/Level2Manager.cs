@@ -25,26 +25,20 @@ public class Level2Manager : MonoBehaviour
 
     private IEnumerator Tuto1()
     {
-        string text = "You now have a new move. You can throw projectile to keep bad mood people at bay.";
+        string text = "With a stronger soul, stronger power. You soul can now bump people around.";
         StartCoroutine(dialogBox.TypeDialog(text));
         yield return new WaitForSeconds(4f);
-        text = "To fire, press left mouse button and charge it. The longer you charge, the stronger the push is.";
-        StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(4f);
-        text = "You can also use it to open door. Try it.";
+        text = "To fire, press right mouse button and charge it. The longer you charge, the stronger the push is.";
         StartCoroutine(dialogBox.TypeDialog(text));
         yield return new WaitForSeconds(4f);
     }
 
 
-    private IEnumerator EndTuto()
+    private void EndTuto()
     {
-        string text = "Good Job! Time to spread happyness.";
         enemies[0].AggroRange = 10f;
         enemies[1].AggroRange = 10f;
         enemies[2].AggroRange = 10f;
-        StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(4f);
         dialogBox.textBox.SetActive(false);
     }
 
@@ -54,7 +48,7 @@ public class Level2Manager : MonoBehaviour
         {
             step++;
             StopAllCoroutines();
-            StartCoroutine(EndTuto());
+            EndTuto();
         }
         if (!outsideActivated)
         {
@@ -88,7 +82,7 @@ public class Level2Manager : MonoBehaviour
         if (AllEnemiesAreHappy() && step == 1)
         {
             step++;
-            EndLevel();
+            StartCoroutine(EndLevel());
         }
     }
 
@@ -101,10 +95,16 @@ public class Level2Manager : MonoBehaviour
         return true;
     }
 
-    private void EndLevel()
+    private IEnumerator EndLevel()
     {
         dialogBox.textBox.SetActive(true);
-        string text = "Congratulations! Time to spread more happyness at your local park.";
+        string text = "Amazing! You can feel your soul getting close to whole again.";
         StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(4f);
+        //Animation from soul becoming stronger
+        text = "One last challenge remains at the park.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(4f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level3");
     }
 }

@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(dialogBox.TypeDialog(introText));
+        //StartCoroutine(dialogBox.TypeDialog(introText));
 
     }
 

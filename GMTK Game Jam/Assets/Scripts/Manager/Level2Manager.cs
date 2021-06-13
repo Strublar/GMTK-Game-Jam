@@ -28,7 +28,7 @@ public class Level2Manager : MonoBehaviour
         string text = "With a stronger soul, stronger power. You soul can now bump people around.";
         StartCoroutine(dialogBox.TypeDialog(text));
         yield return new WaitForSeconds(4f);
-        text = "To fire, press right mouse button and charge it. The longer you charge, the stronger the push is.";
+        text = "To activate, press right mouse button. It takes a bit of time to recharge it.";
         StartCoroutine(dialogBox.TypeDialog(text));
         yield return new WaitForSeconds(4f);
     }

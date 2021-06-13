@@ -8,18 +8,16 @@ public class IntroManager : MonoBehaviour
     bool isCharacterPicked;
     bool isStoryComplete = true;
     GameManager gameManager;
-    [SerializeField] List<Sprite> sprites;
     [SerializeField] private GameObject selectionCharacter;
     [SerializeField] private float timer;
     private void Awake()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        
     }
 
     private void Start()
     {
-        //StartCoroutine(IntroText());
-        
+        //StartCoroutine(IntroText());       
     }
 
     private void Update()
@@ -52,19 +50,19 @@ public class IntroManager : MonoBehaviour
 
     public void PickCharacterF()
     {
-        if (gameManager != null) gameManager.selectedCharacter = 0;
+        GameManager.Instance.selectedCharacter = 0;
         isCharacterPicked = true;
     }
 
     public void PickCharacterG()
     {
-        if (gameManager != null) gameManager.selectedCharacter = 1;
+        GameManager.Instance.selectedCharacter = 1;
         isCharacterPicked = true;
     }
 
     public void PickCharacterN()
     {
-        if (gameManager != null) gameManager.selectedCharacter = 2;
+        GameManager.Instance.selectedCharacter = 2;
         isCharacterPicked = true;
     }
 }

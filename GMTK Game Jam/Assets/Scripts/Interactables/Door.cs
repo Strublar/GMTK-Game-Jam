@@ -5,7 +5,9 @@ using UnityEngine;
 public class Door : MonoBehaviour, IInteractable
 {
     public bool IsOpen { get; set; }
-
+    [SerializeField] GameObject doorOpen;
+    [SerializeField] GameObject doorClose;
+    [SerializeField] BoxCollider2D boxCollider;
     public void OnInteract()
     {
         throw new System.NotImplementedException();
@@ -15,7 +17,10 @@ public class Door : MonoBehaviour, IInteractable
     {
         if(collision.gameObject.layer == 10)
         {
-            Destroy(gameObject);
+            doorOpen.SetActive(true);
+            doorClose.SetActive(false);
+            boxCollider.enabled = false;
+            IsOpen = true;
         }
     }
 }

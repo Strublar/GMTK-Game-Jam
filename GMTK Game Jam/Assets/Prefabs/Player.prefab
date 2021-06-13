@@ -5425,13 +5425,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1483150436245416248, guid: 0611da7c12bc6e0458e15f0fb02c9bc6,
     type: 3}
   projectileContainer: {fileID: 0}
-  minChargeTime: 0.5
-  maxChargeTime: 1.5
-  minForce: 50
-  maxForce: 250
+  bumpCooldown: 1.5
+  bumpForce: 300
   healPerSecond: 500
   baseDmgPerSecond: 100
-  throwSound: {fileID: 2038801304}
   chargingBar: {fileID: 0}
   Level: 0
   aspirationSounds: {fileID: 1050819158831919965}

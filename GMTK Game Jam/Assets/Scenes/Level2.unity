@@ -4555,6 +4555,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6699273200403598961, guid: f28b0d56b857e304292cc34f0cee51c0,
         type: 3}
+      propertyPath: bumpForce
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6699273200403598961, guid: f28b0d56b857e304292cc34f0cee51c0,
+        type: 3}
+      propertyPath: bumpCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6699273200403598961, guid: f28b0d56b857e304292cc34f0cee51c0,
+        type: 3}
       propertyPath: projectileContainer
       value: 
       objectReference: {fileID: 1191327842}

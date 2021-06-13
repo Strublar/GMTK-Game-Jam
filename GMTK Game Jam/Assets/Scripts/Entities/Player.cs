@@ -26,10 +26,9 @@ public class Player : Entity, IAttackable
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject projectilePrefab, projectileContainer;
 
-    [SerializeField] private float minChargeTime;
-    [SerializeField] private float maxChargeTime;
-    [SerializeField] private int minForce;
-    [SerializeField] private int maxForce;
+    [SerializeField] private float bumpCooldown;
+
+    [SerializeField] private int bumpForce;
 
     //variable related to the heal and damage from the soul
     [SerializeField] float healPerSecond;
@@ -37,7 +36,7 @@ public class Player : Entity, IAttackable
     [SerializeField] private ChargingBar chargingBar;
 
     private float lastDamageFrame;
-    private float currentChargeTime;
+    private float currentCooldown;
     private bool isCharging;
     [SerializeField] public int Level;
 
@@ -116,9 +115,9 @@ public class Player : Entity, IAttackable
 
         if(Level>=2)
         {
-            currentChargeTime += IsCharging ? Time.deltaTime : 0;
+            currentCooldown -= Time.deltaTime;
 
-            chargingBar.UpdateChargingBar(isCharging, currentChargeTime, minChargeTime, maxChargeTime);
+            chargingBar.UpdateChargingBar(currentCooldown,bumpCooldown);
         }
         
 
@@ -195,27 +194,20 @@ public class Player : Entity, IAttackable
     }
     public void StartCharging()
     {
-        currentChargeTime = 0;
+        currentCooldown = 0;
         IsCharging = true;
     }
 
-    public void Fire(Vector3 direction)
+    public void Bump(Vector3 direction)
     {
-        Debug.Log("Charge time = " + currentChargeTime);
-        if (currentChargeTime >= minChargeTime)
+        if (currentCooldown <= 0)
         {
-            /*GameObject newProjectile = Instantiate(projectilePrefab, transform.position, transform.rotation, projectileContainer.transform);
+            soul.Bump(bumpForce);
+            currentCooldown = bumpCooldown;
 
-            
-            currentForce = Mathf.Min(maxForce, currentForce);
-            newProjectile.GetComponent<Projectile>().Throw(direction, currentForce);
-            PlaySound(throwSounds);*/
-            float currentForce = minForce + (maxForce - minForce)
-                * (currentChargeTime - minChargeTime)
-                / (maxChargeTime - minChargeTime);
-            soul.Bump(currentForce);
         }
 
+        
         IsCharging = false;
 
     }

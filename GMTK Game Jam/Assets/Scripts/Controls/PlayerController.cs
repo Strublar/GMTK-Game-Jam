@@ -79,24 +79,25 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        #region Projectiles
+        #region Bump
 
 
         if (Input.GetMouseButtonDown(1) && player.Level>=2)
         {
-            player.StartCharging();
-            Debug.Log("Start charging");
-        }
-        if (Input.GetMouseButtonUp(1) && player.Level >= 2)
-        {
+            //player.StartCharging();
+            //Debug.Log("Start charging");
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos = new Vector3(mousePos.x, mousePos.y, 0);
             Vector3 fireDirection = mousePos - player.transform.position;
             fireDirection.Normalize();
 
-            Debug.Log("Fire !");
-            player.Fire(fireDirection);
+            Debug.Log("Bump !");
+            player.Bump(fireDirection);
         }
+/*        if (Input.GetMouseButtonUp(1) && player.Level >= 2)
+        {
+            
+        }*/
 
         #endregion
 

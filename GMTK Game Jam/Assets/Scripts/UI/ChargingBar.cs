@@ -7,24 +7,16 @@ public class ChargingBar : MonoBehaviour
 
     [SerializeField] private GameObject barFolder, chargingBar;
 
-    public void UpdateChargingBar(bool isCharging,float currentCharge, float minCharge, float maxCharge )
+    public void UpdateChargingBar(float currentCooldown, float maxCooldown )
     {
-        if(isCharging)
+        if(currentCooldown>0)
         {
             barFolder.SetActive(true);
-            chargingBar.transform.localScale = new Vector3(0.30849f *Mathf.Clamp01( currentCharge / maxCharge), 0.5f, 1);
-            if(currentCharge<minCharge)
-            {
-                chargingBar.GetComponent<Renderer>().material.color = Color.white;
-            }
-            else if (currentCharge > maxCharge)
-            {
-                chargingBar.GetComponent<Renderer>().material.color = Color.yellow;
-            }
-            else 
-            {
-                chargingBar.GetComponent<Renderer>().material.color = Color.green;
-            }
+            chargingBar.transform.localScale = new Vector3(0.30849f *Mathf.Clamp01( currentCooldown / maxCooldown), 0.5f, 1);
+
+            chargingBar.GetComponent<Renderer>().material.color = Color.Lerp(Color.green, Color.red, currentCooldown / maxCooldown) ;
+            
+
         }
         else
         {

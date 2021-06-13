@@ -57,14 +57,15 @@ public class Level1Manager : MonoBehaviour
     private IEnumerator EndTuto()
     {
         string text = "Good Job! Time to spread happyness.";
+
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(3f);
         Destroy(doorClosed);
         doorOpen.SetActive(true);
-        foreach(Enemy enemy in enemies)
+        foreach (Enemy enemy in enemies)
         {
             enemy.AggroRange = 10f;
         }
-        StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(4f);
         dialogBox.textBox.SetActive(false);
     }
 
@@ -91,8 +92,6 @@ public class Level1Manager : MonoBehaviour
         if(enemies[0].IsHappy && step == 3)
         {
             step++;
-            enemies[1].AggroRange = 10;
-            enemies[2].AggroRange = 10;
             StopAllCoroutines();
             StartCoroutine(EndTuto());
         }
@@ -120,7 +119,7 @@ public class Level1Manager : MonoBehaviour
         yield return new WaitForSeconds(4f);
         text = "Your soul is growing.";
         StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         //Animation from soul becoming stronger
         text = "Time to tackle a harder challenge at your school.";
         StartCoroutine(dialogBox.TypeDialog(text));

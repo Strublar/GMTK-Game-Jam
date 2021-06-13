@@ -6,7 +6,7 @@ public class IntroManager : MonoBehaviour
 {
     [SerializeField] DialogBox dialogBox;
     bool isCharacterPicked;
-    bool isStoryComplete = true;
+    bool isStoryComplete = false;
     GameManager gameManager;
     [SerializeField] private GameObject selectionCharacter;
     [SerializeField] private float timer;
@@ -17,13 +17,13 @@ public class IntroManager : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(IntroText());       
+        StartCoroutine(IntroText());       
     }
 
     private void Update()
     {
         timer -= Time.deltaTime;
-        if (timer <= 0)
+        if (isStoryComplete)
         {
             selectionCharacter.SetActive(true);
         }
@@ -36,15 +36,15 @@ public class IntroManager : MonoBehaviour
 
     private IEnumerator IntroText()
     {
-        string text = "You are tired to feel all those negative emotion all the time around you.";
+        string text = "You used to be a cheerful and joyful person, but the negativity and bad mood of people around finally broke you.\n\n" +
+            "However you won't stay like that forever. You want to recover your past self and to do so you will take care of the root of the problem, making those around you join yourself toward the light.\n\n" +
+            "Helping you in the process to get back the full extend of your soul.";
         StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(4f);
-        text = "The world is such a great place why does everyone only focus on its bad aspect.";
-        StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(4f);
-        text = "That must change let's change the heart of people through sharing our soul with them.";
-        StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(10f);      
+    }
+
+    public void PressSkipButton()
+    {
         isStoryComplete = true;
     }
 

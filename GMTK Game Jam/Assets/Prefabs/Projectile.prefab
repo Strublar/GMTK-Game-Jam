@@ -124,9 +124,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ff4c6b393e9d5c846bb43437db0165c5, type: 3}
   spritesColor:
   - {fileID: 21300000, guid: 3298e753f0ce07948b92fb38c6c6517a, type: 3}
-  - {fileID: 21300000, guid: 596353f17e9bf9f4fa8a7c486619e993, type: 3}
   - {fileID: 21300000, guid: e09905dc9861629438aa4978369547ce, type: 3}
   - {fileID: 21300000, guid: c3481f8360a7cc448a27d75dac7af223, type: 3}
+  - {fileID: 21300000, guid: 596353f17e9bf9f4fa8a7c486619e993, type: 3}
   spriteRenderer: {fileID: 1463667562294731303}
   throwHitSounds: {fileID: 8785369432412445962}
   direction: {x: 0, y: 0, z: 0}

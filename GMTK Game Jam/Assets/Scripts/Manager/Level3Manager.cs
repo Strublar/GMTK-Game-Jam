@@ -4,5 +4,52 @@ using UnityEngine;
 
 public class Level3Manager : MonoBehaviour
 {
-    
+    int step;
+    [SerializeField] private DialogBox dialogBox;
+    [SerializeField] List<Enemy> enemies;
+
+    private void Start()
+    {
+        step = 0;
+        StartCoroutine(Tuto1());
+    }
+
+    private IEnumerator Tuto1()
+    {
+        string text = "You soul is almost complete. Now, You can link your soul with happy people to create a new link.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(8f);
+        dialogBox.gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (AllEnemiesAreHappy() && step == 0)
+        {
+            step++;
+            StartCoroutine(EndLevel());
+        }
+    }
+
+    private bool AllEnemiesAreHappy()
+    {
+        foreach (Enemy enemy in enemies)
+        {
+            if (!enemy.IsHappy) return false;
+        }
+        return true;
+    }
+
+    private IEnumerator EndLevel()
+    {
+        dialogBox.textBox.SetActive(true);
+        string text = "You've done it! Your soul is whole again and you helped so many in the process.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(8f);
+        //Animation from soul becoming stronger
+        text = "Thank you so much for playing our game.";
+        StartCoroutine(dialogBox.TypeDialog(text));
+        yield return new WaitForSeconds(4f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("StartMenu");
+    }
 }

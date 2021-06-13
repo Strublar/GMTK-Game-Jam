@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 8341099297333664586}
   - component: {fileID: 8341099297333664583}
   - component: {fileID: 2703744821785725793}
+  - component: {fileID: 314042188265684333}
   m_Layer: 7
   m_Name: AdvancedEnemy
   m_TagString: Untagged
@@ -204,7 +205,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3641180271071635013}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -235,15 +236,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bb22ee75f48d94a9bac3ad74bf3bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
+  moveSpeed: 5
   attack: 20
+  hasLink: 0
   spriteRenderer: {fileID: 529013987280332176}
   happyVFX: {fileID: 8554218233915536187}
   aggroRange: 20
   hp: 70
   maxHp: 70
   immunityFrame: 1
-  rb: {fileID: 0}
+  rb: {fileID: 8341099297333664581}
+  wanderTimer: 3
+  bumpVFX: {fileID: 0}
+--- !u!70 &314042188265684333
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641180271071635013}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.7, y: 1.34}
+  m_Direction: 0
 --- !u!1 &4824105153762829798
 GameObject:
   m_ObjectHideFlags: 0

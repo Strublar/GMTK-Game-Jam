@@ -81,19 +81,7 @@ public class Player : Entity, IAttackable
             timerBeforeCombineAgain -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (IsCombined && timerBeforeCombineAgain <= 0)
-            {
-                Split();
-            }
-
-            /*if (!IsCombined && timerBeforeCombineAgain <= 0 && isSoulInRange)
-            {
-                IsCombined = true;
-                timerBeforeCombineAgain = 2f;
-            }*/
-        }
+        
 
 
         if (isSoulInRange == false && debug == true)
@@ -154,6 +142,12 @@ public class Player : Entity, IAttackable
 
         #endregion
     }
+    public override void Move(Vector3 direction, float duration)
+    {
+        base.Move(direction, duration);
+        soul.transform.position += moveSpeed * direction * duration;
+
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -211,14 +205,16 @@ public class Player : Entity, IAttackable
         Debug.Log("Charge time = " + currentChargeTime);
         if (currentChargeTime >= minChargeTime)
         {
-            GameObject newProjectile = Instantiate(projectilePrefab, transform.position, transform.rotation, projectileContainer.transform);
+            /*GameObject newProjectile = Instantiate(projectilePrefab, transform.position, transform.rotation, projectileContainer.transform);
 
+            
+            currentForce = Mathf.Min(maxForce, currentForce);
+            newProjectile.GetComponent<Projectile>().Throw(direction, currentForce);
+            PlaySound(throwSounds);*/
             float currentForce = minForce + (maxForce - minForce)
                 * (currentChargeTime - minChargeTime)
                 / (maxChargeTime - minChargeTime);
-            currentForce = Mathf.Min(maxForce, currentForce);
-            newProjectile.GetComponent<Projectile>().Throw(direction, currentForce);
-            PlaySound(throwSounds);
+            soul.Bump(currentForce);
         }
 
         IsCharging = false;
@@ -239,6 +235,7 @@ public class Player : Entity, IAttackable
     {
         IsCombined = true;
         moveSpeed = moveSpeedCombined;
+        soul.Combine();
         soul.gameObject.SetActive(false);
         PlaySound(aspirationSounds);
         combineVFX.Play();

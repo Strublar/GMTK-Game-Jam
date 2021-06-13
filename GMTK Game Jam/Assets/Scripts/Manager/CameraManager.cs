@@ -29,14 +29,20 @@ public class CameraManager : MonoBehaviour
 
     public void CenterCamera()
     {
-        if (player.IsCombined)
+        if (player.IsCombined || true)
         {
             transform.position = player.transform.position + new Vector3(offsetX, offsetY, -1);
+            
         }
         else
         {
-            transform.position = (player.transform.position + soul.transform.position) / 2f + new Vector3(offsetX, offsetY, -1);
-            camera.orthographicSize = defaultCameraSize + (player.transform.position - soul.transform.position).magnitude / unzoomStrength;
+            Vector3 destination = (player.transform.position + soul.transform.position) / 2f + new Vector3(offsetX, offsetY, -1);
+            transform.position = Vector3.MoveTowards(transform.position, destination,.05f);
+            camera.orthographicSize = defaultCameraSize + 
+                ((player.transform.position - soul.transform.position).magnitude > 0.1f ?
+                (player.transform.position - soul.transform.position).magnitude:0f)
+                / unzoomStrength;
+
         }
     }
 }

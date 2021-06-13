@@ -9,6 +9,8 @@ public class Soul : Entity
     [SerializeField] private GameObject linkPrefab;
     [SerializeField] private Link playerLink;
     [SerializeField] private float bumpRadius;
+    [SerializeField] private ParticleSystem bumpVFX;
+
     private List<GameObject> linkList = new List<GameObject>();
 
     public void Awake()
@@ -42,9 +44,10 @@ public class Soul : Entity
                 Vector2 forceDirection = col.transform.position-transform.position;
                 forceDirection.Normalize();
                 col.GetComponent<Rigidbody2D>().AddForce(forceDirection*force);
+
             }
         }
-
+        bumpVFX.Play();
     }
     public void Combine()
     {

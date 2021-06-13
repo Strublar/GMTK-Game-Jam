@@ -14,7 +14,8 @@ public class Enemy : Entity, IAttackable
     [SerializeField] private float immunityFrame;
     [SerializeField] private Rigidbody2D rb;
     private float lastDamageFrame;
-    [SerializeField]protected float wanderTimer;
+    [SerializeField] protected float wanderTimer;
+    [SerializeField] private ParticleSystem bumpVFX;
     protected float baseWanderTimer;
     public bool IsHappy { get; set; }
     
@@ -82,7 +83,7 @@ public class Enemy : Entity, IAttackable
 
     protected void Wander()
     {
-        int forceStrength = Random.Range(10, 50);
+        int forceStrength = Random.Range(50, 120);
         Vector3 direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
         direction.Normalize();
         rb.AddForce(forceStrength * direction);

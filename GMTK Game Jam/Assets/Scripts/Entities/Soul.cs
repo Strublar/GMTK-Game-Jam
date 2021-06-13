@@ -41,7 +41,7 @@ public class Soul : Entity
         {
             if(col.gameObject.layer == 7)
             {
-                Vector2 forceDirection = col.transform.position-transform.position;
+                Vector2 forceDirection = col.transform.position-player.transform.position;
                 forceDirection.Normalize();
                 col.GetComponent<Rigidbody2D>().AddForce(forceDirection*force);
 

@@ -31,17 +31,25 @@ public class PlayerController : MonoBehaviour
         direction.Normalize();
 
         player.Move(direction, Time.deltaTime) ;
-
+        //player.soul.Move(direction, Time.deltaTime);
         //Soul mouvement
         if (player.IsCombined == false)
         {
             //player.soul.Move(direction, Time.deltaTime);
-            if (Input.GetKey(KeyCode.Space))
+            /*if (Input.GetKey(KeyCode.Space))
             {
-                Vector3 altDirection = player.transform.position - player.soul.transform.position;
-                altDirection.Normalize();
-                player.soul.Move(altDirection *2f, Time.deltaTime);
-            }
+                if (Vector3.Distance(player.soul.transform.position, player.transform.position) >= 0.5f)
+                {
+                    Vector3 altDirection = player.transform.position - player.soul.transform.position;
+                    altDirection.Normalize();
+                    player.soul.Move(altDirection * 2f, Time.deltaTime);
+                }
+                else
+                {
+                    goto endSoulMouvement;
+                }
+
+            }*/
 
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos = new Vector3(mousePos.x, mousePos.y, 0);
@@ -60,6 +68,11 @@ public class PlayerController : MonoBehaviour
         {
             player.soul.transform.position = player.transform.position;
         }
+
+        #pragma warning disable CS0164 // This label has not been referenced
+        endSoulMouvement:;
+        #pragma warning restore CS0164 // This label has not been referenced
+
         #endregion
 
     }

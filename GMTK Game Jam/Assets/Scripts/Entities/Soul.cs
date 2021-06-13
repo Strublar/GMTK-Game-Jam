@@ -8,6 +8,7 @@ public class Soul : Entity
     [SerializeField] private Player player;
     [SerializeField] private GameObject linkPrefab;
     [SerializeField] private Link playerLink;
+    [SerializeField] private float bumpRadius;
     private List<GameObject> linkList = new List<GameObject>();
 
     public void Awake()
@@ -26,10 +27,25 @@ public class Soul : Entity
                 GameObject newLink = Instantiate(linkPrefab, transform);
                 newLink.GetComponentInChildren<Link>().Init(5f, target);
                 linkList.Add(newLink);
+
             }
         }
     }
 
+    public void Bump(float force)
+    {
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), bumpRadius);
+        foreach(Collider2D col in enemies)
+        {
+            if(col.gameObject.layer == 7)
+            {
+                Vector2 forceDirection = col.transform.position-transform.position;
+                forceDirection.Normalize();
+                col.GetComponent<Rigidbody2D>().AddForce(forceDirection*force);
+            }
+        }
+
+    }
     public void Combine()
     {
         foreach(GameObject link in linkList)

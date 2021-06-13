@@ -142,6 +142,12 @@ public class Player : Entity, IAttackable
 
         #endregion
     }
+    public override void Move(Vector3 direction, float duration)
+    {
+        base.Move(direction, duration);
+        soul.transform.position += moveSpeed * direction * duration;
+
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -199,14 +205,16 @@ public class Player : Entity, IAttackable
         Debug.Log("Charge time = " + currentChargeTime);
         if (currentChargeTime >= minChargeTime)
         {
-            GameObject newProjectile = Instantiate(projectilePrefab, transform.position, transform.rotation, projectileContainer.transform);
+            /*GameObject newProjectile = Instantiate(projectilePrefab, transform.position, transform.rotation, projectileContainer.transform);
 
+            
+            currentForce = Mathf.Min(maxForce, currentForce);
+            newProjectile.GetComponent<Projectile>().Throw(direction, currentForce);
+            PlaySound(throwSounds);*/
             float currentForce = minForce + (maxForce - minForce)
                 * (currentChargeTime - minChargeTime)
                 / (maxChargeTime - minChargeTime);
-            currentForce = Mathf.Min(maxForce, currentForce);
-            newProjectile.GetComponent<Projectile>().Throw(direction, currentForce);
-            PlaySound(throwSounds);
+            soul.Bump(currentForce);
         }
 
         IsCharging = false;

@@ -27,18 +27,18 @@ public class Level2Manager : MonoBehaviour
     {
         string text = "With a stronger soul, stronger power. You soul can now bump people around.";
         StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(4f);
-        text = "To activate, press right mouse button. It takes a bit of time to recharge it.";
+        yield return new WaitForSeconds(5f);
+        text = "To activate, press right mouse button when your soul is out. It takes a bit of time to recharge it.";
         StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
     }
 
 
     private void EndTuto()
     {
-        enemies[0].AggroRange = 10f;
-        enemies[1].AggroRange = 10f;
-        enemies[2].AggroRange = 10f;
+        enemies[0].AggroRange = 15f;
+        enemies[1].AggroRange = 15f;
+        enemies[2].AggroRange = 15f;
         dialogBox.textBox.SetActive(false);
     }
 
@@ -56,10 +56,10 @@ public class Level2Manager : MonoBehaviour
             {
                 if(outsideDoors[i].IsOpen)
                 {
-                    enemies[3].AggroRange = 10f;
-                    enemies[4].AggroRange = 10f;
-                    enemies[5].AggroRange = 10f;
-                    enemies[6].AggroRange = 10f;
+                    enemies[3].AggroRange = 15f;
+                    enemies[4].AggroRange = 15f;
+                    enemies[5].AggroRange = 15f;
+                    enemies[6].AggroRange = 15f;
                     outsideActivated = true;
                 }
             }
@@ -70,10 +70,10 @@ public class Level2Manager : MonoBehaviour
             {
                 if (cafeteriaDoors[i].IsOpen)
                 {
-                    enemies[7].AggroRange = 10f;
-                    enemies[8].AggroRange = 10f;
-                    enemies[9].AggroRange = 10f;
-                    enemies[10].AggroRange = 10f;
+                    enemies[7].AggroRange = 15f;
+                    enemies[8].AggroRange = 15f;
+                    enemies[9].AggroRange = 15f;
+                    enemies[10].AggroRange = 15f;
                     cafeteriaActivated = true;
                 }
             }

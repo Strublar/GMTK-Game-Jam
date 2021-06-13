@@ -23,7 +23,7 @@ public class Soul : Entity
         if(collision.gameObject.layer == 7)
         {
             Enemy target = collision.gameObject.GetComponent<Enemy>();
-            if(target.IsHappy && !target.hasLink)
+            if(target.IsHappy && !target.hasLink && player.Level >= 3)
             {
 
                 GameObject newLink = Instantiate(linkPrefab, transform);

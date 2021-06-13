@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos = new Vector3(mousePos.x, mousePos.y, 0);
             Vector3 moveDirection = mousePos - player.soul.transform.position;
-            if(moveDirection.magnitude >=.5f)
+            if(moveDirection.magnitude >=.25f)
             {
                 moveDirection.Normalize();
 
@@ -82,12 +82,12 @@ public class PlayerController : MonoBehaviour
         #region Projectiles
 
 
-        if (Input.GetMouseButtonDown(0) && player.Level>=2)
+        if (Input.GetMouseButtonDown(1) && player.Level>=2)
         {
             player.StartCharging();
             Debug.Log("Start charging");
         }
-        if (Input.GetMouseButtonUp(0) && player.Level >= 2)
+        if (Input.GetMouseButtonUp(1) && player.Level >= 2)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos = new Vector3(mousePos.x, mousePos.y, 0);
@@ -102,16 +102,17 @@ public class PlayerController : MonoBehaviour
 
 
         #region Swap with soul
-        if (Input.GetMouseButtonUp(1) && player.Level >= 3)
+        /*if (Input.GetMouseButtonUp(1) && player.Level >= 3)
         {
             Vector3 tmpPos = player.transform.position;
             player.transform.position = player.soul.transform.position;
             player.soul.transform.position = tmpPos;
-        }
+        }*/
         #endregion
 
         #region Split
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             if (player.IsCombined && player.timerBeforeCombineAgain <= 0)
             {

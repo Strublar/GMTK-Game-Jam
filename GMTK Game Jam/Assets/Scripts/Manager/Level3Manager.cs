@@ -7,7 +7,7 @@ public class Level3Manager : MonoBehaviour
     int step;
     [SerializeField] private DialogBox dialogBox;
     [SerializeField] List<Enemy> enemies;
-
+    [SerializeField] GameObject endScreenGirl, endScreenBoy, endScreenNeutral;
     private void Start()
     {
         step = 0;
@@ -51,6 +51,18 @@ public class Level3Manager : MonoBehaviour
         text = "Thank you so much for playing our game.";
         StartCoroutine(dialogBox.TypeDialog(text));
         yield return new WaitForSeconds(5f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("StartMenu");
+        /*switch(GameManager.Instance.selectedCharacter)
+        {
+            case 0:
+                endScreenGirl.SetActive(true);
+                break;
+            case 1:
+                endScreenGirl.SetActive(true);
+                break;
+            case 2:
+                endScreenNeutral.SetActive(true);
+                break;
+        }*/
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("StartMenu");
     }
 }

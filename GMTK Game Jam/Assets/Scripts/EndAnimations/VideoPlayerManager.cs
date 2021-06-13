@@ -11,7 +11,7 @@ public class VideoPlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, fileName+".avi");
+        videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, fileName+".mp4");
         videoPlayer.Play();
     }
 

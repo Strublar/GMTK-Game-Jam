@@ -18,8 +18,9 @@ public class Level3Manager : MonoBehaviour
     {
         string text = "You soul is almost complete. Now, You can link your soul with happy people to create a new link.";
         StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(8f);
-        dialogBox.gameObject.SetActive(false);
+        yield return new WaitForSeconds(6f);
+        dialogBox.textBox.SetActive(false);
+        enemies[4].AggroRange = 100;
     }
 
     private void Update()

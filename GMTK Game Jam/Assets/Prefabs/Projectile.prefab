@@ -114,6 +114,7 @@ MonoBehaviour:
   moveSpeed: 5
   attack: 0
   hasLink: 0
+  damage: 10
   lifeTime: 2
   spritesGrey:
   - {fileID: 21300000, guid: e1a134ba3535a4849b0a52892cd29814, type: 3}

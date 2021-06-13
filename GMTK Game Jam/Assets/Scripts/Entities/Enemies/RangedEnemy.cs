@@ -52,7 +52,7 @@ public class RangedEnemy : Enemy
 
         #region Fire
         fireDelay -= Time.deltaTime;
-        if(fireDelay<=0 && direction.magnitude <= AggroRange)
+        if(fireDelay<=0 && direction.magnitude <= AggroRange && !IsHappy)
         {
             GameObject newProjectile = Instantiate(projectilePrefab, transform.position, transform.rotation, 
                 projectileContainer.transform);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : Entity
 {
+    [SerializeField] private float damage;
     [SerializeField] private float lifeTime;
     [SerializeField] List<Sprite> spritesGrey;
     [SerializeField] List<Sprite> spritesColor;
@@ -39,9 +40,18 @@ public class Projectile : Entity
     public void OnTriggerEnter2D(Collider2D other)
     {
 
+        if(!hasImpact && other.gameObject.layer == 8)
+        {
+            OnAttackedArgs args;
+            args.damage = damage;
+            args.attacker = this.gameObject;
+            args.splitSoul = false;
+            other.gameObject.SendMessage("OnAttacked", args, SendMessageOptions.DontRequireReceiver);
+        }
+
         hasImpact = true;
-        Debug.Log("Hit with " + other.name);
-        //Destroy(this.gameObject);
+
+        
         PlaySound(throwHitSounds);
     }
 

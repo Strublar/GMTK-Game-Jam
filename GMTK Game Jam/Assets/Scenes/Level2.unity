@@ -792,6 +792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 258307072856170823, guid: dba25fad55d94b2429d1fb68fbe90ced,
         type: 3}
+      propertyPath: aggroRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 258307072856170823, guid: dba25fad55d94b2429d1fb68fbe90ced,
+        type: 3}
       propertyPath: throwStrength
       value: 150
       objectReference: {fileID: 0}

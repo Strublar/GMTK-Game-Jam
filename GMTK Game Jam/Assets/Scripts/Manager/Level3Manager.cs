@@ -46,11 +46,8 @@ public class Level3Manager : MonoBehaviour
         dialogBox.textBox.SetActive(true);
         string text = "You've done it! Your soul is whole again and you helped so many in the process.";
         StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(8f);
-        //Animation from soul becoming stronger
-        text = "Thank you so much for playing our game.";
-        StartCoroutine(dialogBox.TypeDialog(text));
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(6f);
+        //Animation from soul becoming stronger       
         /*switch(GameManager.Instance.selectedCharacter)
         {
             case 0:
@@ -63,6 +60,6 @@ public class Level3Manager : MonoBehaviour
                 endScreenNeutral.SetActive(true);
                 break;
         }*/
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("StartMenu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("End");
     }
 }

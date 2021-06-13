@@ -9,6 +9,8 @@ public class VideoFrameManager : MonoBehaviour
     [SerializeField] List<Sprite> frames;
     [SerializeField] float speed;
 
+    [SerializeField] bool loop;
+
     private void Start()
     {
         StartCoroutine(PlayVideo());
@@ -21,6 +23,7 @@ public class VideoFrameManager : MonoBehaviour
             videoScreen.sprite = frame;
             yield return new WaitForSeconds(1 / speed);
         }
+        if (loop) StartCoroutine(PlayVideo());
     }
 
 

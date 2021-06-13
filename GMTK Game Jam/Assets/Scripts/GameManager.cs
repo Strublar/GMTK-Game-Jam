@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<Sprite> firstCharacter;
     [SerializeField] List<Sprite> secondCharacter;
     [SerializeField] List<Sprite> thirdCharacter;
-    [HideInInspector] public int selectedCharacter;
+    public int selectedCharacter;
 
     public enum KeyboardLanguage : int
     {
